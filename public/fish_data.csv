@@ -1,0 +1,279 @@
+Quality,Fish,Fishing Hole,Open Water,Bait,Time of Day,Notes,Location,Achieve,Achieve Order
+White,Globefish,None,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,1
+Blue,Bluefin Trevally,Any,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,2
+Green,Cherry Salmon,Shore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,3
+Yellow,Cutlass Fish,Shore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,4
+Orange,Stingray,Shore Fish,FALSE,Any,Nighttime,,Seitung Province,Seitung Province Fisher,5
+Pink,Spotted Stingray,Shore Fish,FALSE,Shrimplings,Daytime,,Seitung Province,Seitung Province Fisher,6
+Purple,Fugu Fish,Shore Fish,FALSE,Shrimplings,Nighttime,,Seitung Province,Seitung Province Fisher,7
+White,Mullet,None,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,8
+Blue,Corvina,Any,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,9
+Green,Crimson Snapper,Offshore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,10
+Yellow,Honeycomb Grouper,Offshore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,11
+Orange,Humphead Wrasse,Offshore Fish,FALSE,Any,Daytime,,Seitung Province,Seitung Province Fisher,12
+Pink,Skipjack Tuna,Offshore Fish,FALSE,Sardines,Any,,Seitung Province,Seitung Province Fisher,13
+Purple,Sailfish,Offshore Fish,FALSE,Sardines,Any,,Seitung Province,Seitung Province Fisher,14
+White,Porgy,None,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,15
+Blue,Chestnut Sea Bream,Any,TRUE,Any,Any,,Seitung Province,Seitung Province Fisher,16
+Green,Green Sawfish,Offshore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,17
+Yellow,Tripletail,Offshore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,18
+Orange,Dragonet,Offshore Fish,FALSE,Any,Any,,Seitung Province,Seitung Province Fisher,19
+Pink,Mega Prawn,Offshore Fish,FALSE,Sardines,Nighttime,,Seitung Province,Seitung Province Fisher,20
+Purple,Sunfish,Offshore Fish,FALSE,Shrimplings,Daytime,,Seitung Province,Seitung Province Fisher,21
+White,Flying Fish,None,TRUE,Any,Any,,New Kaineng City,Kaineng Fisher,1
+Blue,Blowfish,Any,TRUE,Any,Nighttime,,New Kaineng City,Kaineng Fisher,2
+Green,Emerald Snapper,Coastal Fish,FALSE,Any,Any,,New Kaineng City,Kaineng Fisher,3
+Yellow,Amberjack,Coastal Fish,FALSE,Any,Daytime,,New Kaineng City,Kaineng Fisher,4
+Orange,Blue Dorado,Coastal Fish,FALSE,Any,Nighttime,,New Kaineng City,Kaineng Fisher,5
+Pink,Giant Trevally,Coastal Fish,FALSE,Sardines,Any,,New Kaineng City,Kaineng Fisher,6
+Purple,Bluefin Tuna,Coastal Fish,FALSE,Mackerel,Any,,New Kaineng City,Kaineng Fisher,7
+White,Pollock,None,TRUE,Any,Any,,New Kaineng City,Kaineng Fisher,8
+Blue,Emperor Fish,Any,TRUE,Any,Any,,New Kaineng City,Kaineng Fisher,9
+Green,Kahawai,Coastal Fish,FALSE,Any,Any,,New Kaineng City,Kaineng Fisher,10
+Yellow,Pufferfish,Coastal Fish,FALSE,Any,Nighttime,,New Kaineng City,Kaineng Fisher,11
+Orange,Sturgeon,Channel Fish,FALSE,Any,Any,,New Kaineng City,Kaineng Fisher,12
+Pink,Tarpon,Coastal Fish,FALSE,Shrimplings,Any,,New Kaineng City,Kaineng Fisher,13
+Purple,Swordfish,Coastal Fish,FALSE,Mackerel,Daytime,,New Kaineng City,Kaineng Fisher,14
+White,Sea Perch,None,TRUE,Any,Any,,New Kaineng City,Kaineng Fisher,15
+Blue,Weever,Any,TRUE,Any,Any,,New Kaineng City,Kaineng Fisher,16
+Green,Striped Barracuda,Channel Fish,FALSE,Any,Daytime,,New Kaineng City,Kaineng Fisher,17
+Yellow,Dragonfish,Channel Fish,FALSE,Any,Any,,New Kaineng City,Kaineng Fisher,18
+Orange,Taimen,Channel Fish,FALSE,Any,Dusk/Dawn,,New Kaineng City,Kaineng Fisher,19
+Pink,Starry Flounder,Channel Fish,FALSE,Sardines,Nighttime,,New Kaineng City,Kaineng Fisher,20
+Purple,Oarfish,channel Fish,FALSE,Shrimplings,Any,,New Kaineng City,Kaineng Fisher,21
+White,Freshwater Eel,None,TRUE,Any,Nighttime,,Echovald Wilds,Echovald Wilds Fisher,1
+Blue,Black Carp,Any,TRUE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,2
+Green,Bullheaded Catfish,Lake Fish,FALSE,Any,Nighttime,,Echovald Wilds,Echovald Wilds Fisher,3
+Yellow,Cherry Barb,Lake Fish,FALSE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,4
+Orange,Amber Trout,Lake Fish,FALSE,Any,Daytime,,Echovald Wilds,Echovald Wilds Fisher,5
+Pink,Royal Featherback,Lake Fish,FALSE,Freshwater Minnows,Nighttime,,Echovald Wilds,Echovald Wilds Fisher,6
+Purple,Melandru's Lurker,Lake Fish,FALSE,Freshwater Minnows,Daytime,,Echovald Wilds,Echovald Wilds Fisher,7
+White,Stone Loach,None,TRUE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,8
+Blue,Knifefish,Any,TRUE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,9
+Green,Snakehead,Grotto Fish,FALSE,Any,Daytime,,Echovald Wilds,Echovald Wilds Fisher,10
+Yellow,Petrifish,Grotto Fish,FALSE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,11
+Orange,Albino Gourami,Grotto Fish,FALSE,Any,Any,,Echovald Wilds,Echovald Wilds Fisher,12
+Pink,Albino Axolotl,Grotto Fish,FALSE,Glow Worms,Nighttime,,Echovald Wilds,Echovald Wilds Fisher,13
+Purple,Dark Sleeper,Grotto Fish,FALSE,Glow Worms,Daytime,,Echovald Wilds,Echovald Wilds Fisher,14
+White,Boxfish,None,TRUE,Any,Daytime,,Dragon's End,Dragon's End Fisher,1
+Blue,Canthan Carp,Any,TRUE,Any,Any,,Dragon's End,Dragon's End Fisher,2
+Green,Jade Lamprey,Quarry Fish,FALSE,Any,Any,,Dragon's End,Dragon's End Fisher,3
+Yellow,Spotted Pufferfish,Quarry Fish,FALSE,Any,Nighttime,,Dragon's End,Dragon's End Fisher,4
+Orange,Giant Gourami,Quarry Fish,FALSE,Any,Any,,Dragon's End,Dragon's End Fisher,5
+Pink,Jade Sea Turtle,Quarry Fish,FALSE,Nightcrawlers,Daytime,,Dragon's End,Dragon's End Fisher,6
+Purple,Cuttlefish,Quarry Fish,FALSE,Shrimplings,Nighttime,,Dragon's End,Dragon's End Fisher,7
+White,Rohu,None,TRUE,Any,Any,,Dragon's End,Dragon's End Fisher,8
+Blue,Gourami,Any,TRUE,Any,Any,,Dragon's End,Dragon's End Fisher,9
+Green,Toadfish,Cavern Fish,FALSE,Any,Any,,Dragon's End,Dragon's End Fisher,10
+Yellow,Sheatfish,Cavern Fish,FALSE,Any,Any,,Dragon's End,Dragon's End Fisher,11
+Orange,Unicorn Fish,Cavern Fish,FALSE,Any,Daytime,,Dragon's End,Dragon's End Fisher,12
+Pink,Axolotl,Cavern Fish,FALSE,Nightcrawlers,Nighttime,,Dragon's End,Dragon's End Fisher,13
+Purple,Chambered Nautilus,Cavern Fish,FALSE,Shrimplings,Any,,Dragon's End,Dragon's End Fisher,14
+Gray,Goldfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,1
+Yellow,Armored Scalefish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,2
+Yellow,Bloodfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,3
+Yellow,Bonefish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,4
+Yellow,Clawfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,5
+Yellow,Dustfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,6
+Orange,Sunscale Striker,Any,FALSE,Any,Daytime,,Anywhere,World Class Fisher,7
+Gray,Silverfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,8
+Gray,Red Herring,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,9
+Yellow,Fangfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,10
+Yellow,Totemfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,11
+Yellow,Venomfish,Any,TRUE,Any,Any,,Anywhere,World Class Fisher,12
+Orange,Twilight Striker,Any,FALSE,Any,Dusk/Dawn,,Anywhere,World Class Fisher,13
+Orange,Moonfin Striker,Any,FALSE,Any,Nighttime,,Anywhere,World Class Fisher,14
+White,Bitterling,None,TRUE,Any,Any,,Ascalon,Ascalonian Fisher,1
+Blue,Bluegill,Any,TRUE,Any,Daytime,,Ascalon,Ascalonian Fisher,2
+Green,Rock Bass,Lake Fish,FALSE,Any,Any,,Ascalon,Ascalonian Fisher,3
+Yellow,Largemouth Bass,Lake Fish,FALSE,Any,Any,,Ascalon,Ascalonian Fisher,4
+Orange,Golden Trout,Lake Fish,FALSE,Fish Eggs,Dusk/Dawn,,Ascalon,Ascalonian Fisher,5
+Pink,Gar,Lake Fish,FALSE,Freshwater Minnows,Daytime,,Ascalon,Ascalonian Fisher,6
+Purple,Muskellunge,Lake Fish,FALSE,Freshwater Minnows,Dusk/Dawn,,Ascalon,Ascalonian Fisher,7
+White,Bream,None,TRUE,Any,Any,,Ascalon,Ascalonian Fisher,8
+Blue,Brook Trout,Any,TRUE,Fish Eggs,Dusk/Dawn,,Ascalon,Ascalonian Fisher,9
+Green,Catfish,Lake Fish,FALSE,Any,Nighttime,,Ascalon,Ascalonian Fisher,10
+Yellow,Rainbow Trout,Lake Fish,FALSE,Fish Eggs,Daytime,,Ascalon,Ascalonian Fisher,11
+Orange,Ripsaw Catfish,Lake Fish,FALSE,Any,Nighttime,,Ascalon,Ascalonian Fisher,12
+Pink,Giant Catfish,Lake Fish,FALSE,Freshwater Minnows,Nighttime,,Ascalon,Ascalonian Fisher,13
+Purple,Old Whiskers,Lake Fish,FALSE,Freshwater Minnows,Nighttime,Release for 2500 karma,Ascalon,Ascalonian Fisher,14
+White,Cutthroat Trout,None,TRUE,Fish Eggs,Any,,Ascalon,Ascalonian Fisher,15
+Blue,Smallmouth Bass,Any,TRUE,Any,Any,,Ascalon,Ascalonian Fisher,16
+Green,Black Crappie,Noxious Water Fish,FALSE,Any,Any,,Ascalon,Ascalonian Fisher,17
+Yellow,Yellow Perch,Noxious Water Fish,FALSE,Any,Daytime,,Ascalon,Ascalonian Fisher,18
+Orange,Warmouth,Noxious Water Fish,FALSE,Lightning Bugs,Any,,Ascalon,Ascalonian Fisher,19
+Pink,Aquatic Frog,Noxious Water Fish,FALSE,Lightning Bugs,Any,Release for 1500 karma,Ascalon,Ascalonian Fisher,20
+Purple,Branded Eel,Noxious Water Fish,FALSE,Lightning Bugs,Nighttime,,Ascalon,Ascalonian Fisher,21
+White,Elonian Bass,None,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,1
+Blue,Elon Tetra,Desert Fish,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,2
+Green,Barramundi,Desert Fish,FALSE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,3
+Yellow,Giant Barb,Desert Fish,FALSE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,4
+Orange,Gilded Loach,Desert Fish,FALSE,Any,Daytime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,5
+Pink,Marbled Lungfish,Desert Fish,FALSE,Scorpions,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,6
+Purple,Giant Paddlefish,Desert Fish,FALSE,Any,Daytime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,7
+White,Mahseer,None,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,8
+Blue,Lungfish,Desert Fish,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,9
+Green,Red-Eyed Piranha,Desert Fish,FALSE,Any,Daytime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,10
+Yellow,Mudskipper,Desert Fish,FALSE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,11
+Orange,Golden Mahseer,Desert Fish,FALSE,Any,Daytime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,12
+Pink,Striped Catfish,Desert Fish,FALSE,Scorpions,Nighttime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,13
+Purple,Kaluga,Desert Fish,FALSE,Mackerel,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,14
+White,Tilapia,None,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,15
+Blue,Zander,Desert Fish,TRUE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,16
+Green,Sand Carp,Desert Fish,FALSE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,17
+Yellow,Paddlefish,Desert Fish,FALSE,Any,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,18
+Orange,Silver Bichir,Desert Fish,FALSE,Any,Nighttime,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,19
+Pink,Tigerfish,Desert Fish,FALSE,Mackerel,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,20
+Purple,Vundu,Desert Fish,FALSE,Scorpions,Any,,"Elon River, Crystal Desert, Elonian Mainland",Desert Fisher,21
+White,Sea Trout,None,TRUE,Any,Any,,Isles of Elona,Desert Isles Fisher,1
+Blue,Cobia,Any,TRUE,Any,Any,,Isles of Elona,Desert Isles Fisher,2
+Green,Diamond Trevally,Shore Fish,FALSE,Any,Any,,Isles of Elona,Desert Isles Fisher,3
+Yellow,Yellowtail Snapper,Shore Fish,FALSE,Any,Daytime,,Isles of Elona,Desert Isles Fisher,4
+Orange,Pompano,Shore Fish,FALSE,Any,Any,,Isles of Elona,Desert Isles Fisher,5
+Pink,King Crab,Shore Fish,FALSE,Mackerel,Nighttime,,Isles of Elona,Desert Isles Fisher,6
+Purple,Beluga,Shore Fish,FALSE,Fish Eggs,Daytime,,Isles of Elona,Desert Isles Fisher,7
+White,Sheepshead,None,TRUE,Any,Any,,Isles of Elona,Desert Isles Fisher,8
+Blue,Parrotfish,Any,TRUE,Any,Any,,Isles of Elona,Desert Isles Fisher,9
+Green,Roosterfish,Offshore Fish,FALSE,Any,Any,,Isles of Elona,Desert Isles Fisher,10
+Yellow,Opah,Offshore Fish,FALSE,Any,Any,,Isles of Elona,Desert Isles Fisher,11
+Orange,Wahoo,Offshore Fish,FALSE,Any,Dusk/Dawn,,Isles of Elona,Desert Isles Fisher,12
+Pink,Blue Marlin,Offshore Fish,FALSE,Mackerel,Daytime,,Isles of Elona,Desert Isles Fisher,13
+Purple,Dandan,Offshore Fish,FALSE,Fish Eggs,Nighttime,,Isles of Elona,Desert Isles Fisher,14
+White,Krytan Clawfish,None,TRUE,Any,Any,,Kryta,Krytan Fisher,1
+Blue,Delavan Guppy,Any,TRUE,Any,Any,,Kryta,Krytan Fisher,2
+Green,Steelhead Trout,River Fish,FALSE,Fish Eggs,Any,,Kryta,Krytan Fisher,3
+Yellow,Croaker,River Fish,FALSE,Any,Any,,Kryta,Krytan Fisher,4
+Orange,Divinity Angelfin,River Fish,FALSE,Any,Daytime,,Kryta,Krytan Fisher,5
+Pink,Queenfish,River Fish,FALSE,Freshwater Minnows,Any,,Kryta,Krytan Fisher,6
+Purple,Mud Skate,River Fish,FALSE,Freshwater Minnows,Nighttime,,Kryta,Krytan Fisher,7
+White,Speckled Perch,None,TRUE,Any,Any,,Kryta,Krytan Fisher,8
+Blue,Round Goby,Any,TRUE,Any,Any,,Kryta,Krytan Fisher,9
+Green,Striped Bass,Lake Fish,FALSE,Any,Any,,Kryta,Krytan Fisher,10
+Yellow,Black Bass,Lake Fish,FALSE,Any,Any,,Kryta,Krytan Fisher,11
+Orange,Quagmire Eel,Lake Fish,FALSE,Any,Nighttime,,Kryta,Krytan Fisher,12
+Pink,Royal Pike,Lake Fish,FALSE,Freshwater Minnows,Daytime,,Kryta,Krytan Fisher,13
+Purple,Slaughterfish,Lake Fish,FALSE,Freshwater Minnows,Nighttime,,Kryta,Krytan Fisher,14
+White,Spotted Flounder,None,TRUE,Any,Any,,Kryta,Krytan Fisher,15
+Blue,Sailfin Molly,Any,TRUE,Any,Any,,Kryta,Krytan Fisher,16
+Green,Swampblight Lamprey,Coastal Fish,FALSE,Any,Any,,Kryta,Krytan Fisher,17
+Yellow,Silver Moony,Coastal Fish,FALSE,Any,Nighttime,,Kryta,Krytan Fisher,18
+Orange,Krytan Puffer,Coastal Fish,FALSE,Any,Nighttime,,Kryta,Krytan Fisher,19
+Pink,Holy Mackerel,Coastal Fish,FALSE,Shrimplings,Daytime,,Kryta,Krytan Fisher,20
+Purple,Black Lionfish,Coastal Fish,FALSE,Shrimplings,Any,,Kryta,Krytan Fisher,21
+White,Brackish Goby,None,TRUE,Any,Nighttime,,Maguuma Jungle,Maguuma Fisher,1
+Blue,Oscar,Any,TRUE,Any,Any,,Maguuma Jungle,Maguuma Fisher,2
+Green,Bicuda,Freshwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,3
+Yellow,Pacu,Freshwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,4
+Orange,Arowana,Freshwater Fish,FALSE,Any,Daytime,,Maguuma Jungle,Maguuma Fisher,5
+Pink,Golden Dorado,Freshwater Fish,FALSE,Sparkfly Larvae,Daytime,,Maguuma Jungle,Maguuma Fisher,6
+Purple,Arapaima,Freshwater Fish,FALSE,Sparkfly Larvae,Daytime,,Maguuma Jungle,Maguuma Fisher,7
+White,Piranha,None,TRUE,Any,Daytime,,Maguuma Jungle,Maguuma Fisher,8
+Blue,Silver Drum,Any,TRUE,Any,Any,,Maguuma Jungle,Maguuma Fisher,9
+Green,Payara,Freshwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,10
+Yellow,Peacock Bass,Freshwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,11
+Orange,Sardinata,Freshwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,12
+Pink,Jundia,Freshwater Fish,FALSE,Sparkfly Larvae,Any,,Maguuma Jungle,Maguuma Fisher,13
+Purple,Goliath Grouper,Saltwater Fish,FALSE,Sardines,Any,,Maguuma Jungle,Maguuma Fisher,14
+White,Snook,None,TRUE,Any,Any,,Maguuma Jungle,Maguuma Fisher,15
+Blue,Surubim,Any,TRUE,Any,Any,,Maguuma Jungle,Maguuma Fisher,16
+Green,Maguuma Trout,Saltwater Fish,FALSE,Any,Daytime,,Maguuma Jungle,Maguuma Fisher,17
+Yellow,Wolffish,Saltwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,18
+Orange,Maguuma Jack,Saltwater Fish,FALSE,Any,Any,,Maguuma Jungle,Maguuma Fisher,19
+Pink,Rainbow Glowfish,Saltwater Fish,FALSE,Sardines,Nighttime,,Maguuma Jungle,Maguuma Fisher,20
+Purple,Royal Starfish,Saltwater Fish,FALSE,Any,Nighttime,Release for 2500 karma,Maguuma Jungle,Maguuma Fisher,21
+White,Dusky Grouper,None,TRUE,Any,Dusk/Dawn,,Orr,Orrian Fisher,1
+Blue,Albino Blindfish,Any,TRUE,Any,Any,,Orr,Orrian Fisher,2
+Green,Viperfish,Offshore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,3
+Yellow,Abyssal Squid,Offshore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,4
+Orange,Stargazer,Offshore Fish,FALSE,Any,Nighttime,,Orr,Orrian Fisher,5
+Pink,Blobfish,Offshore Fish,FALSE,Leeches,Any,,Orr,Orrian Fisher,6
+Purple,Benthic Behemoth,Offshore Fish,FALSE,Leeches,Any,,Orr,Orrian Fisher,7
+White,Ghostfish,None,TRUE,Any,Nighttime,,Orr,Orrian Fisher,8
+Blue,Dead Alewife,Any,TRUE,Any,Any,,Orr,Orrian Fisher,9
+Green,Hagfish,Offshore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,10
+Yellow,Spectral Jellyfish,Offshore Fish,FALSE,Any,Nighttime,,Orr,Orrian Fisher,11
+Orange,Orrian Anglerfish,Offshore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,12
+Pink,Giant Octopus,Offshore Fish,FALSE,Sardines,Dusk/Dawn,,Orr,Orrian Fisher,13
+Purple,Shipwreck Moray,Offshore Fish,FALSE,Sardines,Nighttime,,Orr,Orrian Fisher,14
+White,Murkwater Darter,None,TRUE,Any,Any,,Orr,Orrian Fisher,15
+Blue,Monkfish,Any,TRUE,Any,Any,,Orr,Orrian Fisher,16
+Green,Dhuum Fish,Shore Fish,FALSE,Any,Nighttime,,Orr,Orrian Fisher,17
+Yellow,Frilled Shark,Shore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,18
+Orange,Man-of-War,Shore Fish,FALSE,Any,Any,,Orr,Orrian Fisher,19
+Pink,Risen Sea Bass,Shore Fish,FALSE,Leeches,Any,,Orr,Orrian Fisher,20
+Purple,Unholy Mackerel,Shore Fish,FALSE,Leeches,Nighttime,,Orr,Orrian Fisher,21
+White,Volcanic Blackfish,None,TRUE,Any,Any,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,1
+Blue,Flayfin,Volcanic Fish,TRUE,Any,Any,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,2
+Green,Garnet Ram,Volcanic Fish,FALSE,Any,Daytime,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,3
+Yellow,Fire Eel,Volcanic Fish,FALSE,Any,Nighttime,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,4
+Orange,Glowing Coalfish,Volcanic Fish,FALSE,Any,Any,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,5
+Pink,Magma Ray,Volcanic Fish,FALSE,Lava Beetles,Daytime,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,6
+Purple,Stone Guiyu,Volcanic Fish,FALSE,Lava Beetles,Any,,"Draconis Mons, Fireheart Rise",Ring of Fire Fisher,7
+White,Firemouth,None,TRUE,Any,Any,,Ember Bay,Ring of Fire Fisher,8
+Blue,Igneous Rockfish,Coastal Fish,TRUE,Any,Any,,Ember Bay,Ring of Fire Fisher,9
+Green,Redtail Catfish,Coastal Fish,FALSE,Any,Nighttime,,Ember Bay,Ring of Fire Fisher,10
+Yellow,Geyser Batfin,Coastal Fish,FALSE,Any,Any,,Ember Bay,Ring of Fire Fisher,11
+Orange,Flamefin Betta,Coastal Fish,FALSE,Any,Daytime,,Ember Bay,Ring of Fire Fisher,12
+Pink,Scorpion Fish,Coastal Fish,FALSE,Lava Beetles,Nighttime,,Ember Bay,Ring of Fire Fisher,13
+Purple,Dunkleosteus,Coastal Fish,FALSE,Lava Beetles,Any,,Ember Bay,Ring of Fire Fisher,14
+Yellow,Seahorse,Any,TRUE,Any,Any,Release for 350 karma,Saltwater,Saltwater Fisher,1
+Yellow,Leafy Sea Dragon,Any,TRUE,Any,Any,Release for 350 karma,Saltwater,Saltwater Fisher,2
+Yellow,Mantis Shrimp,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,3
+Yellow,Electric Eel,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,4
+Yellow,Rockfish,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,5
+Orange,Horseshoe Crab,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,6
+Orange,Sea Robin,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,7
+Yellow,Redfin Barb,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,8
+Yellow,Googly-Eyed Squid,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,9
+Yellow,Shimmering Squid,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,10
+Yellow,Vampire Squid,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,11
+Yellow,Flapjack Octopus,Any,TRUE,Any,Any,Release for 350 karma,Saltwater,Saltwater Fisher,12
+Orange,Aurelian Herring,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,13
+Orange,Red Gurnard,Any,TRUE,Any,Any,,Saltwater,Saltwater Fisher,14
+White,Alewife,None,TRUE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,1
+Blue,Alpine Char,Any,TRUE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,2
+Green,White Bass,Lake Fish,FALSE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,3
+Yellow,Sockeye,Lake Fish,FALSE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,4
+Orange,Chain Pickerel,Lake Fish,FALSE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,5
+Pink,Cerulean Salamander,Lake Fish,FALSE,Ramshorn Snails,Nighttime,Release for 1500 karma,Shiverpeaks,Shiverpeaks Fisher,6
+Purple,Glacial Snakehead,Lake Fish,FALSE,Shrimplings,Daytime,,Shiverpeaks,Shiverpeaks Fisher,7
+White,Icefish,None,TRUE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,8
+Blue,Grayling,Any,TRUE,Any,Daytime,,Shiverpeaks,Shiverpeaks Fisher,9
+Green,Northern Pike,Lake Fish,FALSE,Any,Daytime,,Shiverpeaks,Shiverpeaks Fisher,10
+Yellow,King Salmon,Lake Fish,FALSE,Any,Daytime,,Shiverpeaks,Shiverpeaks Fisher,11
+Orange,Beacon's Perch,Boreal Fish,FALSE,Any,Daytime,,Shiverpeaks,Shiverpeaks Fisher,12
+Pink,Lornar's Bass,Lake Fish,FALSE,Ramshorn Snails,Daytime,,Shiverpeaks,Shiverpeaks Fisher,13
+Purple,Alabaster Oscar,Boreal Fish,FALSE,Ramshorn Snails,Daytime,,Shiverpeaks,Shiverpeaks Fisher,14
+White,Snow Crab,None,TRUE,Any,Nighttime,,Shiverpeaks,Shiverpeaks Fisher,15
+Blue,Walleye,Any,TRUE,Any,Nighttime,,Shiverpeaks,Shiverpeaks Fisher,16
+Green,Boreal Cod,Boreal Fish,FALSE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,17
+Yellow,Icy Lumpfish,Boreal Fish,FALSE,Any,Any,,Shiverpeaks,Shiverpeaks Fisher,18
+Orange,Mystic Remora,Boreal Fish,FALSE,Any,Dusk/Dawn,,Shiverpeaks,Shiverpeaks Fisher,19
+Pink,Snowflake Eel,Boreal Fish,FALSE,Ramshorn Snails,Nighttime,,Shiverpeaks,Shiverpeaks Fisher,20
+Purple,Halibut,Boreal Fish,FALSE,Shrimplings,Any,,Shiverpeaks,Shiverpeaks Fisher,21
+Gray,Rusted Brass Compass,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,1
+Gray,Broken Brass Spyglass,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,2
+Gray,Rusted Bronze Astrolabe,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,3
+Gray,Antique Diving Helm,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,4
+Gray,Golden Merlion Statuette,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,5
+Gray,Antique Porcelain Vase,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,6
+Gray,Tarnished Silver Sextant,Any,TRUE,Any,Any,,Anywhere,Oceanic Treasure Collector,7
+Gray,Pockmarked Vase,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,1
+Gray,Broken Bottle,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,2
+Gray,Broken Fishing Hook,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,3
+Gray,Broken Oar,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,4
+Gray,Broken Fishing Rod,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,5
+Gray,Broken T rident,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,6
+Gray,Shattered Fishing Cage,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,7
+Gray,Crumbled Ancient Statue,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,8
+Gray,Piece of Driftwood,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,9
+Gray,Rotten Fish Head,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,10
+Gray,Fish-Shaped Stone,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,11
+Gray,Weathered Peg Leg,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,12
+Gray,Rusted Mechanism,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,13
+Gray,Tangled Net,Any,TRUE,Any,Any,,Anywhere,Oceanic Trash Collector,14
+Blue,Mackerel,Any,TRUE,Any,Any,Used as bait,Saltwater,,
+Blue,Daijun Blackfin,Any,TRUE,Haiju Minnows,Any,Used for Daijun Bay renown heart,Seitung Province,,
+Blue,Shinota Blackfin,Special Fishing Hole,FALSE,Any,Any,Used for Shinota Shore renown heart,Seitung Province,,
+,,,FALSE,,,,,,
+,,,FALSE,,,,,,

@@ -6,7 +6,7 @@ import Seo from '../components/Seo'
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
 
-export default function Seitung() {
+export default function Orrian() {
     const fish = useApi(client.getFish)
 
     useEffect(() => {

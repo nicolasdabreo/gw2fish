@@ -54,9 +54,7 @@ function Footer() {
                             <img className="w-auto h-10 rounded-full" src="/logo.png" alt="" />
                             <span className="sr-only">GW2 Fish logo</span>
                         </div>
-                        <p className="text-base text-white">
-                            An app for tracking your fishing achievement progress.
-                        </p>
+                        <p className="text-base text-white">Made by Nicolas Dabreo (Dabs.7509)</p>
                         {/* <div className="flex space-x-6">
                             {navigation.social.map((item) => (
                                 <a key={item.name} href={item.href} className="text-white hover:text-gray-100">

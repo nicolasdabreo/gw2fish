@@ -56,7 +56,6 @@ function ZoneAchievements({ achievements }) {
           <img src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className="object-cover w-full h-24 pointer-events-none md:h-28 lg:h-40 group-hover:opacity-75" />
         </div>
         <p className="block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75">{achievement.name}</p>
-        {console.log(achievement)}
         <p className="block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75">0 / {achievement.bits.length}</p>
       </a>
     </li>

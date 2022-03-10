@@ -6,6 +6,7 @@ import Seo from '../components/Seo'
 
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
+import Spinner from '../components/Spinner'
 
 export default function HomePage() {
   const fishingAchievements = useApi(client.getFishingAchievements)
@@ -30,8 +31,7 @@ export default function HomePage() {
 
       <section className='flex flex-col m-10 text-center layout'>
         <h1 className='mb-8 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate'>Fisher Achievements</h1>
-        {fishingAchievements.loading && <p>Achievements are loading!</p>}
-        {fishingAchievements.error && <p>{fishingAchievements.error}</p>}
+        {fishingAchievements.loading && <Spinner />}
         <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
           {fishingAchievements.data && <ZoneAchievements achievements={fishingAchievements.data} />}
         </ul>

@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import Clock from '../components/Clock'
 import Fish from '../components/Fish'
+import Spinner from '../components/Spinner'
 
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
@@ -44,7 +45,7 @@ export default function DragonsEnd() {
       </section>
 
       <section className='flex flex-col m-10 text-left layout'>
-        {fish.error && <p>{fish.error}</p>}
+        {fish.loading && <Spinner />}
         <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)

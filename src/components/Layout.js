@@ -26,12 +26,6 @@ function Header() {
                     </div>
                     <div className="ml-10 space-x-4">
                         <a href="#" className="inline-block px-2 text-base font-medium text-white no-underline hover:underline">
-                            Equipment
-                        </a>
-                        <a href="#" className="inline-block px-2 text-base font-medium text-white no-underline hover:underline">
-                            Tips
-                        </a>
-                        <a href="#" className="inline-block px-2 text-base font-medium text-white no-underline hover:underline">
                             API Keys
                         </a>
                     </div>

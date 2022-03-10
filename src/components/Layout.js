@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 
-export default function Layout ({ children }) {
+export default function Layout({ children }) {
   return (
     <>
       <Header />
@@ -13,21 +13,18 @@ export default function Layout ({ children }) {
   )
 }
 
-function Header () {
+function Header() {
   return (
-    <header className='bg-gray-900'>
+    <header className='mt-4'>
       <nav className='container px-4 mx-auto md:px-6 lg:px-8' aria-label='Top'>
-        <div className='flex items-center justify-between w-full py-3 border-b border-indigo-500 lg:border-none'>
-          <div className='flex items-center'>
-            <a href='/' className='relative flex items-center text-lg font-black leading-4 tracking-wide text-white rounded-md select-none'>
-              <Image className='rounded-full aspect-square' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
-              <span className='ml-4'>GW2 Fish</span>
-            </a>
-          </div>
+        <div className='flex items-center justify-end w-full py-3 border-b border-blue-500 lg:border-none'>
           <div className='ml-10 space-x-4'>
-            <a href='#' className='inline-block px-2 text-base font-medium text-white no-underline hover:underline'>
-              API Keys
-            </a>
+            <button
+              type="button"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              Add API Key
+            </button>
           </div>
         </div>
       </nav>
@@ -35,68 +32,15 @@ function Header () {
   )
 }
 
-function Footer () {
+function Footer() {
   return (
-    <footer className='bg-gray-900' aria-labelledby='footer-heading'>
-      <h2 id='footer-heading' className='sr-only'>
-        Footer
-      </h2>
-      <div className='container px-4 py-12 mx-auto lg:py-16 md:px-6 lg:px-8'>
-        <div className='xl:grid xl:grid-cols-4 xl:gap-8'>
-          <div className='space-y-8 xl:col-span-1'>
-            <div className='relative flex items-center text-lg font-black leading-4 tracking-wide text-white rounded-md select-none'>
-              <Image className='rounded-full aspect-square' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
-              <span className='sr-only'>GW2 Fish logo</span>
-            </div>
-            <p className='text-base text-white'>Made by <a className='underline' href='https://gitlab.com/Dabsy'>Nicolas Dabreo</a> (Dabs.7509)</p>
-            {/* <div className="flex space-x-6">
-                            {navigation.social.map((item) => (
-                                <a key={item.name} href={item.href} className="text-white hover:text-gray-100">
-                                    <span className="sr-only">{item.name}</span>
-                                    <item.icon className="w-6 h-6" aria-hidden="true" />
-                                </a>
-                            ))}
-                        </div> */}
-          </div>
+    <footer className="bg-white">
+      <div className="container py-12 mx-auto md:flex md:items-center md:justify-between">
+        <div className="flex justify-center space-x-6 md:order-2">
 
-          <div className='mt-12 xl:mt-0'>
-            <h3 className='text-sm font-semibold tracking-wider text-white uppercase'>Support</h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {/* {navigation.support.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href} className="text-base text-white hover:text-gray-900">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))} */}
-            </ul>
-          </div>
-
-          <div className='mt-12 xl:mt-0'>
-            <h3 className='text-sm font-semibold tracking-wider text-white uppercase'>Contact</h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {/* {navigation.company.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href} className="text-base text-white hover:text-gray-900">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))} */}
-            </ul>
-          </div>
-
-          <div className='mt-12 xl:mt-0'>
-            <h3 className='text-sm font-semibold tracking-wider text-white uppercase'>About</h3>
-            <ul role='list' className='mt-4 space-y-4'>
-              {/* {navigation.legal.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href} className="text-base text-white hover:text-gray-900">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))} */}
-            </ul>
-          </div>
+        </div>
+        <div className="mt-8 md:mt-0 md:order-1">
+          <p className="ml-8 text-base text-center text-gray-400">Made by <a className='underline' href='https://gitlab.com/Dabsy'>Nicolas Dabreo</a> (Dabs.7509)</p>
         </div>
       </div>
     </footer>

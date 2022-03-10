@@ -18,18 +18,18 @@ export default function Desert() {
             {/* <Seo templateTitle='Home' /> */}
             <Seo />
 
-            <main className="container mx-auto">
-                <section className='bg-white'>
-                    <div className='flex flex-col min-h-screen m-10 text-center layout'>
 
-                        {fish.loading && <p>Achievements are loading!</p>}
-                        {fish.error && <p>{fish.error}</p>}
-                        <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-                            {fish.data && <p>loaded!</p>}
-                        </ul>
-                    </div>
-                </section>
-            </main>
-        </Layout>
+            <section className='bg-white'>
+                <div className='flex flex-col m-10 text-center layout'>
+
+                    {fish.loading && <p>Achievements are loading!</p>}
+                    {fish.error && <p>{fish.error}</p>}
+                    <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                        {fish.data && <p>loaded!</p>}
+                    </ul>
+                </div>
+            </section>
+
+        </Layout >
     )
 }

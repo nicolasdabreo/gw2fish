@@ -9,12 +9,12 @@ export default function APIKeys() {
             {/* <Seo templateTitle='Home' /> */}
             <Seo />
 
-            <main className="container mx-auto">
-                <section className='bg-white'>
-                    <div className='flex flex-col min-h-screen m-10 text-center layout'>
-                    </div>
-                </section>
-            </main>
-        </Layout>
+
+            <section className='bg-white'>
+                <div className='flex flex-col m-10 text-center layout'>
+                </div>
+            </section>
+
+        </Layout >
     )
 }

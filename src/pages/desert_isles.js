@@ -8,6 +8,7 @@ import Fish from '../components/Fish'
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
 import { FISH_CATCH_DATA } from '../helpers/constants'
+import { tyriaTimeOfDay } from '../helpers/time'
 
 const FISH_IDS = [
   97369,
@@ -28,6 +29,7 @@ const FISH_IDS = [
 
 export default function DesertIsles() {
   const fish = useApi(client.getFish)
+  const timeOfDay = tyriaTimeOfDay()
 
   useEffect(() => {
     fish.request(FISH_IDS)
@@ -42,21 +44,21 @@ export default function DesertIsles() {
       </section>
 
       <section className='flex flex-col m-10 text-left layout'>
-        <h2 className='mb-4 text-sm font-medium tracking-wide text-gray-700 uppercase'>Available Fish</h2>
         {fish.error && <p>{fish.error}</p>}
         <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
-            return <Fish fishItem={fishItem} catchData={catchData} />
+            const available = ['Any', timeOfDay].includes(catchData.time)
+            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
-      </section>
 
-      <section className='flex flex-col m-10 text-left layout'>
-        <h2 className='mb-4 text-sm font-medium tracking-wide text-gray-700 uppercase'>Unavailable Fish</h2>
-        {fish.error && <p>{fish.error}</p>}
-        <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
-          {fish.data && fish.data.map(fishItem => { })}
+        <ul role='list' className='grid grid-cols-1 gap-5 mt-20 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          {fish.data && fish.data.map(fishItem => {
+            const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
+            const available = ['Any', timeOfDay].includes(catchData.time)
+            return !available && <Fish available={false} fishItem={fishItem} catchData={catchData} />
+          })}
         </ul>
       </section>
     </Layout>

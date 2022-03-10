@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function Fish({ fishItem, catchData, available }) {
+export default function Fish ({ fishItem, catchData, available }) {
   return (
     <li key={fishItem.name} className={`${available ? '' : 'opacity-50'} flex col-span-1 rounded-md shadow-sm`}>
       <Image src={fishItem.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md aspect-square item-${fishItem.rarity.toLowerCase()}`} height='64' width='64' />

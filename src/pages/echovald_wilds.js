@@ -25,10 +25,10 @@ const FISH_IDS = [
   96792,
   97329,
   95765,
-  97559,
+  97559
 ]
 
-export default function EchovaldWilds() {
+export default function EchovaldWilds () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -50,7 +50,7 @@ export default function EchovaldWilds() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

@@ -25,10 +25,10 @@ const FISH_IDS = [
   96076,
   97794,
   95699,
-  95632,
+  95632
 ]
 
-export default function DragonsEnd() {
+export default function DragonsEnd () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -50,7 +50,7 @@ export default function DragonsEnd() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

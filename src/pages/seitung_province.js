@@ -13,7 +13,7 @@ import { tyriaTimeOfDay } from '../helpers/time'
 
 const FISH_IDS = [95894, 96350, 97278, 96425, 97604, 95603, 97753, 97865, 96719, 95936, 97692, 97722, 96523, 95926, 96757, 96071, 96944, 97061, 97714, 96318, 97181]
 
-export default function SeitungProvince() {
+export default function SeitungProvince () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -35,7 +35,7 @@ export default function SeitungProvince() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish key={fishItem.id} available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish key={fishItem.id} available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

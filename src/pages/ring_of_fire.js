@@ -11,7 +11,6 @@ import client from '../helpers/gw2client'
 import { FISH_CATCH_DATA } from '../helpers/constants'
 import { tyriaTimeOfDay } from '../helpers/time'
 
-
 const FISH_IDS = [
   96547,
   96720,
@@ -26,10 +25,10 @@ const FISH_IDS = [
   96555,
   97100,
   97498,
-  96361,
+  96361
 ]
 
-export default function RingOfFire() {
+export default function RingOfFire () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -51,7 +50,7 @@ export default function RingOfFire() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

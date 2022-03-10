@@ -32,10 +32,10 @@ const FISH_IDS = [
   95608,
   97187,
   97145,
-  95929,
+  95929
 ]
 
-export default function Desert() {
+export default function Desert () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -57,7 +57,7 @@ export default function Desert() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

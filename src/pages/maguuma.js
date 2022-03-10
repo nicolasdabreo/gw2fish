@@ -32,10 +32,10 @@ const FISH_IDS = [
   96645,
   97122,
   97543,
-  96439,
+  96439
 ]
 
-export default function Maguuma() {
+export default function Maguuma () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -57,7 +57,7 @@ export default function Maguuma() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

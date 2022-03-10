@@ -32,10 +32,10 @@ const FISH_IDS = [
   97887,
   97479,
   97163,
-  96081,
+  96081
 ]
 
-export default function Ascalonian() {
+export default function Ascalonian () {
   const fish = useApi(client.getFish)
   const timeOfDay = tyriaTimeOfDay()
 
@@ -57,7 +57,7 @@ export default function Ascalonian() {
           {fish.data && fish.data.map(fishItem => {
             const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
             const available = ['Any', timeOfDay].includes(catchData.time)
-            return available && <Fish available={true} fishItem={fishItem} catchData={catchData} />
+            return available && <Fish available fishItem={fishItem} catchData={catchData} />
           })}
         </ul>
 

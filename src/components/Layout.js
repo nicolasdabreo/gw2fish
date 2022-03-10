@@ -48,7 +48,7 @@ function Footer() {
                             <Image className="rounded-full" src="/logo.png" alt="GW2 Fish Logo" width="40" height="40" />
                             <span className="sr-only">GW2 Fish logo</span>
                         </div>
-                        <p className="text-base text-white">Made by Nicolas Dabreo (Dabs.7509)</p>
+                        <p className="text-base text-white">Made by <a className='underline' href="https://gitlab.com/Dabsy">Nicolas Dabreo</a> (Dabs.7509)</p>
                         {/* <div className="flex space-x-6">
                             {navigation.social.map((item) => (
                                 <a key={item.name} href={item.href} className="text-white hover:text-gray-100">

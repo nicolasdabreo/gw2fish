@@ -13,3 +13,43 @@
         @apply flex flex-col justify-between h-screen;
     }
 }
+
+.item-junk {
+    color: #AAAAAA;
+    border: 3px solid #AAAAAA !important;
+}
+
+.item-basic {
+    color: #000000;
+    border: 3px solid #000000 !important;
+}
+
+.item-fine {
+    color: #62A4DA;
+    border: 3px solid #62A4DA !important;
+}
+
+.item-masterwork {
+    color: #1a9306;
+    border: 3px solid #1a9306 !important;
+}
+
+.item-rare {
+    color: #fcd00b;
+    border: 3px solid #fcd00b !important;
+}
+
+.item-exotic {
+    color: #ffa405;
+    border: 3px solid #ffa405 !important;
+}
+
+.item-ascended {
+    color: #fb3e8d;
+    border: 3px solid #fb3e8d !important;
+}
+
+.item-legendary {
+    color: #4C139D;
+    border: 3px solid #4C139D !important;
+}

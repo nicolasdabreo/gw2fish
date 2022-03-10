@@ -53,7 +53,7 @@ function ZoneAchievements({ achievements }) {
     <li key={achievement.id} className='relative'>
       <a href={slugify(achievement.name)} className='group'>
         <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
-          <Image placeholder='blur' blurDataURL={`6068-blur.png`} src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
+          <Image placeholder='blur' blurDataURL='6068-blur.png' src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
         </div>
         <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
         <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>0 / {achievement.bits.length}</p>

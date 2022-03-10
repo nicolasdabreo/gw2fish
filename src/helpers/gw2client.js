@@ -11,8 +11,8 @@ const getFishingAchievements = () => (
   apiClient.get(`/achievements?ids=${FISHING_ACHIEVEMENT_IDS.join()}`)
 )
 
-const getFish = () => (
-  apiClient.get(`/items?ids=${FISHING_ACHIEVEMENT_IDS.join()}`)
+const getFish = (fishIds) => (
+  apiClient.get(`/items?ids=${fishIds.join()}`)
 )
 
 export default {

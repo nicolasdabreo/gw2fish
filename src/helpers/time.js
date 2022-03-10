@@ -1,4 +1,4 @@
-function tyriaTime () {
+export function tyriaTime() {
   const now = new Date()
   const utcHours = now.getUTCHours()
   const utcMinutes = now.getUTCMinutes()
@@ -10,18 +10,18 @@ function tyriaTime () {
   return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}`
 }
 
-function canthaTime () {
+export function tyriaTimeOfDay() {
+  return "Daytime"
+}
+
+function canthaTime() {
   return null
 }
 
-function canthaTimeOfDay () {
+function canthaTimeOfDay() {
   return null
 }
 
-function tyriaTimeOfDay () {
-  return null
-}
-
-function formatTime (int) {
+function formatTime(int) {
   return int.toString().padStart(2, '0')
 }

@@ -20,7 +20,7 @@ function Header () {
         <div className='flex items-center justify-between w-full py-3 border-b border-indigo-500 lg:border-none'>
           <div className='flex items-center'>
             <a href='/' className='relative flex items-center text-lg font-black leading-4 tracking-wide text-white rounded-md select-none'>
-              <Image className='rounded-full' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
+              <Image className='rounded-full aspect-square' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
               <span className='ml-4'>GW2 Fish</span>
             </a>
           </div>
@@ -45,7 +45,7 @@ function Footer () {
         <div className='xl:grid xl:grid-cols-4 xl:gap-8'>
           <div className='space-y-8 xl:col-span-1'>
             <div className='relative flex items-center text-lg font-black leading-4 tracking-wide text-white rounded-md select-none'>
-              <Image className='rounded-full' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
+              <Image className='rounded-full aspect-square' src='/logo.png' alt='GW2 Fish Logo' width='40' height='40' />
               <span className='sr-only'>GW2 Fish logo</span>
             </div>
             <p className='text-base text-white'>Made by <a className='underline' href='https://gitlab.com/Dabsy'>Nicolas Dabreo</a> (Dabs.7509)</p>

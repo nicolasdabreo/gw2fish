@@ -2,33 +2,70 @@ import React, { useEffect } from 'react'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
+import Clock from '../components/Clock'
+import Fish from '../components/Fish'
 
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
+import { FISH_CATCH_DATA } from '../helpers/constants'
 
-export default function Desert () {
+const FISH_IDS = [
+  96445,
+  96367,
+  97744,
+  97848,
+  96769,
+  96724,
+  97466,
+  96349,
+  96308,
+  96676,
+  97109,
+  96428,
+  96094,
+  97763,
+  96854,
+  97755,
+  95859,
+  95608,
+  97187,
+  97145,
+  95929,
+]
+
+export default function Desert() {
   const fish = useApi(client.getFish)
 
   useEffect(() => {
-    fish.request()
+    fish.request(FISH_IDS)
   }, [])
 
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      <section>
-        <div className='flex flex-col m-10 text-center layout'>
-
-          {fish.loading && <p>Achievements are loading!</p>}
-          {fish.error && <p>{fish.error}</p>}
-          <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
-            {fish.data && <p>loaded!</p>}
-          </ul>
-        </div>
+      <section className='flex flex-col m-10 text-right layout'>
+        <Clock />
       </section>
 
+      <section className='flex flex-col m-10 text-left layout'>
+        <h2 className='mb-4 text-sm font-medium tracking-wide text-gray-700 uppercase'>Available Fish</h2>
+        {fish.error && <p>{fish.error}</p>}
+        <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          {fish.data && fish.data.map(fishItem => {
+            const catchData = FISH_CATCH_DATA.find(catchData => catchData.Fish == fishItem.name)
+            return <Fish fishItem={fishItem} catchData={catchData} />
+          })}
+        </ul>
+      </section>
+
+      <section className='flex flex-col m-10 text-left layout'>
+        <h2 className='mb-4 text-sm font-medium tracking-wide text-gray-700 uppercase'>Unavailable Fish</h2>
+        {fish.error && <p>{fish.error}</p>}
+        <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
+          {fish.data && fish.data.map(fishItem => { })}
+        </ul>
+      </section>
     </Layout>
   )
 }

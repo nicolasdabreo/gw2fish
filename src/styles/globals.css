@@ -5,6 +5,7 @@
 @layer base {
     html {
         font-family: 'PT Serif', serif;
+        font-display: swap;
         @apply bg-gray-100;
     }
     

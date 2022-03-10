@@ -19,7 +19,7 @@ export default function EchovaldWilds() {
             <Seo />
 
 
-            <section className='bg-white'>
+            <section>
                 <div className='flex flex-col m-10 text-center layout'>
 
                     {fish.loading && <p>Achievements are loading!</p>}

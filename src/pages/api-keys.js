@@ -10,7 +10,7 @@ export default function APIKeys() {
             <Seo />
 
 
-            <section className='bg-white'>
+            <section>
                 <div className='flex flex-col m-10 text-center layout'>
                 </div>
             </section>

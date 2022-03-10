@@ -14,7 +14,7 @@ export default function Layout({ children }) {
 
 function Header() {
     return (
-        <header className="bg-gray-800">
+        <header className="bg-gray-900">
             <nav className="container px-4 mx-auto md:px-6 lg:px-8" aria-label="Top">
                 <div className="flex items-center justify-between w-full py-6 border-b border-indigo-500 lg:border-none">
                     <div className="flex items-center">
@@ -43,7 +43,7 @@ function Header() {
 
 function Footer() {
     return (
-        <footer className="bg-gray-800" aria-labelledby="footer-heading">
+        <footer className="bg-gray-900" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>

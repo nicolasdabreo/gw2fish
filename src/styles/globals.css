@@ -5,6 +5,7 @@
 @layer base {
     html {
         font-family: 'PT Serif', serif;
+        @apply bg-gray-100;
     }
     
     #__next {

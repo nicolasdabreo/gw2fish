@@ -18,15 +18,23 @@ export default function HomePage() {
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-
-      <section className='bg-white'>
-        <div className='flex flex-col m-10 text-center layout'>
-          {fishingAchievements.loading && <p>Achievements are loading!</p>}
-          {fishingAchievements.error && <p>{fishingAchievements.error}</p>}
-          <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-            {fishingAchievements.data && <ZoneAchievements achievements={fishingAchievements.data} />}
-          </ul>
+      <section className='flex flex-col m-10 text-center layout'>
+        <div className="flex justify-between mb-1">
+          <span className="text-base font-medium text-black">Cod Swimming Amongst Mere Minnows</span>
+          <span className="text-sm font-medium text-black">45%</span>
         </div>
+        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '45%' }}></div>
+        </div>
+      </section>
+
+      <section className='flex flex-col m-10 text-center layout'>
+        <h1 className='mb-8 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate'>Fisher Achievements</h1>
+        {fishingAchievements.loading && <p>Achievements are loading!</p>}
+        {fishingAchievements.error && <p>{fishingAchievements.error}</p>}
+        <ul role="list" className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+          {fishingAchievements.data && <ZoneAchievements achievements={fishingAchievements.data} />}
+        </ul>
       </section>
     </Layout>
   )
@@ -48,7 +56,8 @@ function ZoneAchievements({ achievements }) {
           <img src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className="object-cover w-full h-24 pointer-events-none md:h-28 lg:h-40 group-hover:opacity-75" />
         </div>
         <p className="block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75">{achievement.name}</p>
-        <p className="block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75">{ }</p>
+        {console.log(achievement)}
+        <p className="block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75">0 / {achievement.bits.length}</p>
       </a>
     </li>
   ))

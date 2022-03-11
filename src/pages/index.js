@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+// import { useCookies } from "react-cookie"
 import Image from 'next/image'
 
 import Layout from '../components/Layout'
@@ -8,8 +9,9 @@ import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
 import Spinner from '../components/Spinner'
 
-export default function HomePage () {
+export default function HomePage() {
   const fishingAchievements = useApi(client.getFishingAchievements)
+  // const [cookie, _setCookie] = useCookies(["gw2f.api_key", "gw2f.account_name"])
 
   useEffect(() => {
     fishingAchievements.request()
@@ -50,7 +52,7 @@ export default function HomePage () {
 
 const ZONE_ACHIEVEMENT_NAMES = ['Seitung Province Fisher', 'Kaineng Fisher', 'Echovald Wilds Fisher', "Dragon's End Fisher", 'Krytan Fisher', 'Shiverpeaks Fisher', 'Ascalonian Fisher', 'Maguuma Fisher', 'Desert Fisher', 'Desert Isles Fisher', 'Orrian Fisher', 'Ring of Fire Fisher']
 
-function ZoneAchievements ({ achievements }) {
+function ZoneAchievements({ achievements }) {
   const filteredAcheivements = achievements.filter(achievement => (
     ZONE_ACHIEVEMENT_NAMES.some(achievementName => (
       achievement.name.includes(achievementName)) && !achievement.name.includes('Avid')
@@ -72,8 +74,7 @@ function ZoneAchievements ({ achievements }) {
 
 const WORLD_ACHIEVEMENT_NAMES = ['World Class Fisher', 'Saltwater Fisher', 'Oceanic Trash Collector', 'Oceanic Treasure Collector']
 
-function WorldAchievements ({ achievements }) {
-  console.log(achievements)
+function WorldAchievements({ achievements }) {
   const filteredAcheivements = achievements.filter(achievement => (
     WORLD_ACHIEVEMENT_NAMES.some(achievementName => (
       achievement.name.includes(achievementName))
@@ -93,7 +94,7 @@ function WorldAchievements ({ achievements }) {
   ))
 }
 
-function slugify (string) {
+function slugify(string) {
   const newString = string.replace(' Fisher', '')
   return toSnakeCase(newString)
 }

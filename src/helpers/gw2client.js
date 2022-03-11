@@ -7,6 +7,14 @@ const apiClient = axios.create({
   baseURL: 'https://api.guildwars2.com/v2'
 })
 
+const validateToken = (token) => {
+  apiClient.get(`/`)
+}
+
+const getAccount = (token) => {
+  apiClient.get(`/accounts?access_token=${token}`)
+}
+
 const getFishingAchievements = () => (
   apiClient.get(`/achievements?ids=${FISHING_ACHIEVEMENT_IDS.join()}`)
 )
@@ -16,6 +24,8 @@ const getFish = (fishIds) => (
 )
 
 export default {
+  validateToken,
+  getAccount,
   getFishingAchievements,
   getFish
 }

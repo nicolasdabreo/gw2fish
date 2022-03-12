@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { Popover, Transition } from '@headlessui/react'
 import { XIcon, QuestionMarkCircleIcon, CheckCircleIcon } from '@heroicons/react/outline'
 
 import useLocalStorage from '../helpers/useLocalStorage'
+import client from '../helpers/gw2client'
 
 const API_KEY_PATTERN = /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{20}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/;
 
@@ -20,26 +21,31 @@ export default function Layout({ children }) {
 }
 
 function Header() {
-  const { register, handleSubmit, reset, formState } = useForm();
-  const { isSubmitting, isSubmitSuccessful, errors, isDirty, isValid } = formState;
+  const { register, handleSubmit, setError, reset, formState } = useForm();
+  const { isSubmitting, isSubmitSuccessful, errors, isDirty } = formState;
+
   const [instructionsOpen, setInstructionsOpen] = useState(false);
+  const [storedApiKey, setStoredApiKey] = useLocalStorage("gw2f.api_key")
+  const [storedAccountName, setStoredAccountName] = useLocalStorage("gw2f.account_name")
 
-  const [storedApiKey, setStoredApiKey] = useLocalStorage("gw2f.api_key", "")
-  const [storedAccountName, setStoredAccountName] = useLocalStorage("gw2f.account_name", "")
+  async function submitApiKey(data) {
+    return new Promise(async resolve => {
+      const token = await client.validateToken(data.api_key)
 
-  function submitApiKey(data) {
-    return new Promise(resolve => {
-      // if valid format
-      // if valid token
-      // get account
-      setTimeout(() => {
+      // Check correct permissions
+      if (token.data?.id) {
+        const account = await client.getAccount(data.api_key)
         setStoredApiKey(data.api_key)
-        setStoredAccountName("Foobar.1234")
+        setStoredAccountName(account.data.name)
         reset({ api_key: '' }, { keepIsSubmitted: true });
-        resolve();
-      }, 1000);
+      } else {
+        setError("API Key was invalid");
+      }
+
+      resolve();
     });
   }
+
 
   return (
     <Popover className="">
@@ -47,7 +53,8 @@ function Header() {
         <header className='mt-4'>
           <nav className='container px-4 mx-auto md:px-6 lg:px-8' aria-label='Top'>
             <div className='flex items-center justify-end w-full py-3 border-b border-gray-400'>
-              <div className='ml-10 space-x-4'>
+              <div className='flex flex-row ml-10 space-x-4' suppressHydrationWarning={true}>
+                {storedAccountName && <h3 className='self-center font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
                 <Popover.Button className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                   {open ? <XIcon className="w-5 h-5" aria-hidden="true" /> : "Add API Key"}
                 </Popover.Button>

@@ -11,7 +11,6 @@ import Spinner from '../components/Spinner'
 
 export default function HomePage() {
   const fishingAchievements = useApi(client.getFishingAchievements)
-  // const [cookie, _setCookie] = useCookies(["gw2f.api_key", "gw2f.account_name"])
 
   useEffect(() => {
     fishingAchievements.request()

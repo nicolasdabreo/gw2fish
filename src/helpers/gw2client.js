@@ -7,21 +7,21 @@ const apiClient = axios.create({
   baseURL: 'https://api.guildwars2.com/v2'
 })
 
-const validateToken = (token) => {
-  apiClient.get(`/`)
+async function validateToken(token) {
+  return await apiClient.get(`/tokeninfo?access_token=${token}`)
 }
 
-const getAccount = (token) => {
-  apiClient.get(`/accounts?access_token=${token}`)
+async function getAccount(token) {
+  return await apiClient.get(`/account?access_token=${token}`)
 }
 
-const getFishingAchievements = () => (
-  apiClient.get(`/achievements?ids=${FISHING_ACHIEVEMENT_IDS.join()}`)
-)
+async function getFishingAchievements() {
+  return await apiClient.get(`/achievements?ids=${FISHING_ACHIEVEMENT_IDS.join()}`)
+}
 
-const getFish = (fishIds) => (
-  apiClient.get(`/items?ids=${fishIds.join()}`)
-)
+async function getFish(fishIds) {
+  return await apiClient.get(`/items?ids=${fishIds.join()}`)
+}
 
 export default {
   validateToken,

@@ -1,4 +1,4 @@
-export function tyriaTime () {
+export function tyriaTime() {
   const now = new Date()
   const utcHours = now.getUTCHours()
   const utcMinutes = now.getUTCMinutes()
@@ -10,7 +10,7 @@ export function tyriaTime () {
   return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}`
 }
 
-export function tyriaTimeOfDay () {
+export function tyriaTimeOfDay() {
   const now = tyriaTime()
   const [hours, _minutes] = now.split(':')
 
@@ -25,18 +25,18 @@ export function tyriaTimeOfDay () {
   }
 }
 
-function canthaTime () {
+function canthaTime() {
   return null
 }
 
-function canthaTimeOfDay () {
+function canthaTimeOfDay() {
   return null
 }
 
-function formatTime (int) {
+function formatTime(int) {
   return int.toString().padStart(2, '0')
 }
 
-function isBetweenHours (hour, startHour, endHour) {
+function isBetweenHours(hour, startHour, endHour) {
   return hour >= parseInt(startHour, 10) && hour <= parseInt(endHour, 10)
 }

@@ -4,12 +4,14 @@ import Image from 'next/image'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
+import Spinner from '../components/Spinner'
 
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
-import Spinner from '../components/Spinner'
+import useLocalStorage from '../helpers/useLocalStorage'
 
 export default function HomePage() {
+  const [storedApiKey, _setStoredApiKey] = useLocalStorage("gw2f.api_key")
   const fishingAchievements = useApi(client.getFishingAchievements)
 
   useEffect(() => {
@@ -20,15 +22,17 @@ export default function HomePage() {
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
-      <section className='flex flex-col m-10 text-center layout'>
-        <div className='flex justify-between mb-1'>
-          <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
-          <span className='text-sm font-medium text-black'>45%</span>
-        </div>
-        <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-          <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: '45%' }} />
-        </div>
-      </section>
+      {storedApiKey && (
+        <section className='flex flex-col m-10 text-center layout'>
+          <div className='flex justify-between mb-1'>
+            <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
+            <span className='text-sm font-medium text-black'>45%</span>
+          </div>
+          <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+            <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: '45%' }} />
+          </div>
+        </section>
+      )}
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
         <h1 className='mb-8 text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate'>Zone Achievements</h1>

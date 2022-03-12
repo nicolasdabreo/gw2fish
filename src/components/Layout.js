@@ -46,6 +46,10 @@ function Header() {
     });
   }
 
+  function deleteApiKey(_e) {
+    setStoredApiKey('')
+    setStoredAccountName('')
+  }
 
   return (
     <Popover className="">
@@ -76,8 +80,17 @@ function Header() {
                 <div className="px-5 pt-5 pb-6">
                   <div className="mt-4">
                     <div className='max-w-3xl mx-auto'>
-                      {storedAccountName && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
-                      {storedApiKey && <p className='mb-8 text-sm font-medium text-gray-900 truncate'>{storedApiKey}</p>}
+                      <div className='flex flex-col flex-grow truncate'>
+                        {storedAccountName && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
+                        {storedApiKey && (
+                          <div className='flex flex-row justify-center flex-grow mb-8 truncate'>
+                            <p className='self-center text-sm font-medium text-gray-900 truncate'>{storedApiKey}</p>
+                            <button onClick={() => deleteApiKey()} className="bg-red-500 btn hover:bg-red-600">
+                              <XIcon className="w-5 h-5" aria-hidden="true" />
+                            </button>
+                          </div>
+                        )}
+                      </div>
                       <form onSubmit={handleSubmit(submitApiKey)}>
                         <label htmlFor="api_key" className="block text-sm font-medium text-gray-700">
                           New API Key

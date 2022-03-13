@@ -9,8 +9,8 @@ import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
 import { FISHING_ACHIEVEMENT_IDS } from '../helpers/constants'
 
-export default function HomePage() {
-  const [storedApiKey] = useLocalStorage("gw2f.api_key")
+export default function HomePage () {
+  const [storedApiKey] = useLocalStorage('gw2f.api_key')
   const fishingAchievements = useApi(client.getFishingAchievements)
   const accountFishingAchievements = useApi(client.getAccountFishingAchievements)
 
@@ -32,8 +32,7 @@ export default function HomePage() {
         <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
           <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: '0%' }} />
         </div>
-      </section>
-      }
+      </section>}
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
         <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
@@ -46,7 +45,7 @@ export default function HomePage() {
 
 const ZONE_ACHIEVEMENT_NAMES = ['Seitung Province Fisher', 'Kaineng Fisher', 'Echovald Wilds Fisher', "Dragon's End Fisher", 'Krytan Fisher', 'Shiverpeaks Fisher', 'Ascalonian Fisher', 'Maguuma Fisher', 'Desert Fisher', 'Desert Isles Fisher', 'Orrian Fisher', 'Ring of Fire Fisher']
 
-function ZoneAchievements({ achievements, accountAchievements }) {
+function ZoneAchievements ({ achievements, accountAchievements }) {
   const filteredAcheivements = achievements.filter(achievement => (
     ZONE_ACHIEVEMENT_NAMES.some(achievementName => (
       achievement.name.includes(achievementName)) && !achievement.name.includes('Avid')
@@ -70,7 +69,7 @@ function ZoneAchievements({ achievements, accountAchievements }) {
   })
 }
 
-function slugify(string) {
+function slugify (string) {
   const newString = string.replace(' Fisher', '')
   return toSnakeCase(newString)
 }

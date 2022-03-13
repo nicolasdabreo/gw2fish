@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Header from './Header';
+import Header from './Header'
 
-export default function Layout({ children, title }) {
+export default function Layout ({ children, title }) {
   return (
     <>
       <Header title={title} />
@@ -14,7 +14,7 @@ export default function Layout({ children, title }) {
   )
 }
 
-function Footer() {
+function Footer () {
   return (
     <footer className='bg-white'>
       <div className='container py-12 mx-auto md:flex md:items-center md:justify-between'>

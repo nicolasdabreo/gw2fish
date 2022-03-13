@@ -19,9 +19,9 @@ export default function Clock() {
   }, [])
 
   return (
-    <>
+    <div className='flex flex-col'>
       <time className='text-6xl'>{date}</time>
       <time className='text-xl'>{timeOfDay}</time>
-    </>
+    </div>
   )
 }

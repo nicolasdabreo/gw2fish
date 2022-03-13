@@ -8,9 +8,9 @@
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
+    "@rehooks/local-storage": "^2.4.4",
     "next": "latest",
     "react": "17.0.2",
-    "react-cookie": "^4.1.1",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.27.1"
   },

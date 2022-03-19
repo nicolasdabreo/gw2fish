@@ -1,10 +1,14 @@
 export function tyriaTime() {
-  const tyrianSecs = (Date.now() % (2 * 60 * 60 * 1000)) / 1000
+  const tyrianTotalSecs = (Date.now() % (2 * 60 * 60 * 1000)) / 1000
 
-  const tyrianHours = Math.floor(tyrianSecs / 300)
-  const tyrianMinutes = Math.round((tyrianSecs / 5) - tyrianHours * 60)
+  const tyrianHours = Math.floor(tyrianTotalSecs / 300)
+  const tyrianMinutes = Math.round(tyrianTotalSecs / 5) - tyrianHours * 60
+  const tyrianSeconds = Math.round(tyrianTotalSecs * 12 - (tyrianHours * 3600) - (tyrianMinutes * 60)) + 30
 
-  return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}`
+  if (tyrianMinutes === 60 && tyrianSeconds <= 31) {
+    return `${formatTime(tyrianHours == 23 ? 0 : tyrianHours + 1)}:00:${formatTime(tyrianSeconds)}`
+  }
+  return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}:${formatTime(tyrianSeconds == 60 ? 0 : tyrianSeconds)}`
 }
 
 export function tyriaTimeOfDay() {

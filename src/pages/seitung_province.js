@@ -9,6 +9,7 @@ import { SplitFishList, FishList } from '../components/FishList'
 
 import useApi from '../helpers/useApi'
 import client from '../helpers/gw2client'
+import { filterCaughtFish } from '../helpers/fish'
 import { SEITUNG_FISH_CATCH_DATA, WORLD_FISH_CATCH_DATA, SEITUNG_FISH_IDS, WORLD_FISH_IDS } from '../helpers/constants'
 
 export default function SeitungProvince() {
@@ -48,68 +49,51 @@ export default function SeitungProvince() {
         <Clock />
       </section>
 
-      {fish.data && fishingAchievements.data
-        ? (
-          <>
-            <section className='flex flex-col m-10 text-left layout'>
-              <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>Zone Fish</h2>
-              {showSeparately
-                ? (
-                  <SplitFishList
-                    fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
-                    zoneCatchData={SEITUNG_FISH_CATCH_DATA}
-                  />
-                )
-                : (
-                  <FishList
-                    fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
-                    zoneCatchData={SEITUNG_FISH_CATCH_DATA}
-                  />
-                )}
-            </section>
+      {
+        fish.data && fishingAchievements.data
+          ? (
+            <>
+              <section className='flex flex-col m-10 text-left layout'>
+                <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>Zone Fish</h2>
+                {showSeparately
+                  ? (
+                    <SplitFishList
+                      fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
+                      zoneCatchData={SEITUNG_FISH_CATCH_DATA}
+                    />
+                  )
+                  : (
+                    <FishList
+                      fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
+                      zoneCatchData={SEITUNG_FISH_CATCH_DATA}
+                    />
+                  )}
+              </section>
 
-            <section className='flex flex-col m-10 text-left layout'>
-              <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>World Fish</h2>
-              {showSeparately
-                ? (
-                  <SplitFishList
-                    fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
-                    zoneCatchData={WORLD_FISH_CATCH_DATA}
-                    showCaught={showCaught}
-                  />
-                )
-                : (
-                  <FishList
-                    fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
-                    zoneCatchData={WORLD_FISH_CATCH_DATA}
-                    showCaught={showCaught}
-                  />
-                )}
-            </section>
-          </>
-        )
-        : (
-          'Loading...'
-        )}
-    </Layout>
-  )
-}
-
-function filterCaughtFish(fish, showCaught, fishingAchievements, accountAchievements) {
-  if (showCaught || !accountAchievements) {
-    return fish;
-  }
-
-  let uncaughtFishIds = [];
-
-  accountAchievements.forEach(accountAchievement => {
-    fishingAchievements.forEach(fishingAchievement => {
-      if (accountAchievement.id == fishingAchievement.id) {
-        const ids = fishingAchievement.bits.filter((_bit, bitIndex) => !accountAchievement.bits.includes(bitIndex)).map(bit => bit.id)
-        uncaughtFishIds = [...uncaughtFishIds, ...ids]
+              <section className='flex flex-col m-10 text-left layout'>
+                <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>World Fish</h2>
+                {showSeparately
+                  ? (
+                    <SplitFishList
+                      fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
+                      zoneCatchData={WORLD_FISH_CATCH_DATA}
+                      showCaught={showCaught}
+                    />
+                  )
+                  : (
+                    <FishList
+                      fish={filterCaughtFish(fish.data, showCaught, fishingAchievements.data, accountAchievements.data)}
+                      zoneCatchData={WORLD_FISH_CATCH_DATA}
+                      showCaught={showCaught}
+                    />
+                  )}
+              </section>
+            </>
+          )
+          : (
+            'Loading...'
+          )
       }
-    });
-  });
-
-  return fish.filter(fishItem => uncaughtFishIds.includes(fishItem.id))
+    </Layout >
+  )
 }

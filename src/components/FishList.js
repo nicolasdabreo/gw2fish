@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { tyriaTimeOfDay } from '../helpers/time'
 
-export function SplitFishList ({ fish, zoneCatchData, showCaught }) {
+export function SplitFishList({ fish, zoneCatchData }) {
   const timeOfDay = tyriaTimeOfDay()
 
   return (
@@ -33,7 +33,7 @@ export function SplitFishList ({ fish, zoneCatchData, showCaught }) {
   )
 }
 
-export function FishList ({ fish, zoneCatchData, showCaught }) {
+export function FishList({ fish, zoneCatchData }) {
   const timeOfDay = tyriaTimeOfDay()
 
   return (
@@ -49,7 +49,7 @@ export function FishList ({ fish, zoneCatchData, showCaught }) {
   )
 }
 
-function Fish ({ fishItem, catchData, available }) {
+function Fish({ fishItem, catchData, available }) {
   return (
     <li key={fishItem.name} className={`${available ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>
       <div className='flex items-center justify-between flex-1 truncate border-t border-b border-r border-gray-200 rounded-md'>
@@ -69,6 +69,6 @@ function Fish ({ fishItem, catchData, available }) {
   )
 }
 
-function sortFish (fish, sortArr) {
+function sortFish(fish, sortArr) {
   return fish.sort((a, b) => sortArr.indexOf(a.name) - sortArr.indexOf(b.name))
 }

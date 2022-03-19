@@ -1,42 +1,33 @@
 export function tyriaTime() {
-  const now = new Date()
-  const utcHours = now.getUTCHours()
-  const utcMinutes = now.getUTCMinutes()
-  const utcSeconds = now.getUTCMinutes()
+  const tyrianSecs = (Date.now() % (2 * 60 * 60 * 1000)) / 1000
+  const tyrianHours = Math.floor(tyrianSecs / 300)
+  const tyrianMinutes = Math.round((tyrianSecs / 5) - tyrianHours * 60)
 
-  const tyrianHours = Math.floor((utcHours % 2) * 12 + utcMinutes / 5)
-  const tyrianMinutes = Math.floor((utcMinutes % 5) * 12 + utcSeconds / 5)
-
-  return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}`
+  return [tyrianHours, tyrianMinutes];
 }
 
 export function tyriaTimeOfDay() {
-  const now = tyriaTime()
-  const [hours, _minutes] = now.split(':')
+  const [hours, minutes] = tyriaTime()
 
-  if (isBetweenHours(hours, '06:00', '20:00')) {
+  if (isBetween(hours, 6, 19) && isBetween(minutes, 0, 59)) {
     return 'Day'
-  } else if (isBetweenHours(hours, '20:00', '21:00')) {
+  } else if (isBetween(hours, 20, 20) && isBetween(minutes, 0, 59)) {
     return 'Dusk'
-  } else if (isBetweenHours(hours, '21:00', '05:00')) {
-    return 'Night'
-  } else if (isBetweenHours(hours, '05:00', '06:00')) {
+  } else if (isBetween(hours, 5, 5) && isBetween(minutes, 0, 59)) {
     return 'Dawn'
+  } else {
+    return 'Night'
   }
 }
 
-function canthaTime() {
-  return null
+export function formatTime([hours, minutes]) {
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`
 }
 
-function canthaTimeOfDay() {
-  return null
-}
-
-function formatTime(int) {
-  return int.toString().padStart(2, '0')
-}
-
-function isBetweenHours(hour, startHour, endHour) {
-  return hour >= parseInt(startHour, 10) && hour <= parseInt(endHour, 10)
+function isBetween(num, low, high) {
+  if (num >= low && num <= high) {
+    return true
+  } else {
+    return false
+  }
 }

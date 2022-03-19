@@ -1,11 +1,8 @@
 export function tyriaTime() {
-  const now = new Date()
-  const utcHours = now.getUTCHours()
-  const utcMinutes = now.getUTCMinutes()
-  const utcSeconds = now.getUTCMinutes()
+  const tyrianSecs = (Date.now() % (2 * 60 * 60 * 1000)) / 1000
 
-  const tyrianHours = Math.floor((utcHours % 2) * 12 + utcMinutes / 5)
-  const tyrianMinutes = Math.floor((utcMinutes % 5) * 12 + utcSeconds / 5)
+  const tyrianHours = Math.floor(tyrianSecs / 300)
+  const tyrianMinutes = Math.round((tyrianSecs / 5) - tyrianHours * 60)
 
   return `${formatTime(tyrianHours)}:${formatTime(tyrianMinutes)}`
 }

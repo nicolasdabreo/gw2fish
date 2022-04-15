@@ -70,62 +70,62 @@ export default function Header ({ title }) {
                 <div className='px-5 pt-5 pb-6'>
                   <div className='mt-4'>
                     <div className='max-w-3xl mx-auto'>
-                        <div className='flex flex-col flex-grow truncate'>
-                            {storedAccountName && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
-                            {storedApiKey && (
-                                <div className='flex flex-row justify-between flex-grow mb-8 truncate'>
-                                    <p className='self-center text-sm font-medium text-gray-900 truncate'>{storedApiKey}</p>
-                                    <button onClick={() => deleteApiKey()} className='bg-red-500 btn hover:bg-red-600'>
-                                        <XIcon className='w-5 h-5' aria-hidden='true' />
-                                      </button>
-                                  </div>
-                              )}
+                      <div className='flex flex-col flex-grow truncate'>
+                        {storedAccountName && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
+                        {storedApiKey && (
+                          <div className='flex flex-row justify-between flex-grow mb-8 truncate'>
+                            <p className='self-center text-sm font-medium text-gray-900 truncate'>{storedApiKey}</p>
+                            <button onClick={() => deleteApiKey()} className='bg-red-500 btn hover:bg-red-600'>
+                              <XIcon className='w-5 h-5' aria-hidden='true' />
+                            </button>
+                          </div>
+                        )}
+                      </div>
+
+                      <form onSubmit={handleSubmit(submitApiKey)}>
+                        <label htmlFor='api_key' className='block text-sm font-medium text-gray-700'>
+                          New API Key
+                        </label>
+                        <div className='flex flex-row mt-1'>
+                          <div className='relative flex-grow rounded-md shadow-sm'>
+                            <input
+                              {...register('api_key', { required: true, minLength: 4, pattern: API_KEY_PATTERN })}
+                              className={`${errors.api_key ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:ring-1 focus:border-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'} border block w-full p-3 pr-10 rounded-md sm:text-sm`}
+                              placeholder='XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+                            />
+                            <div className='absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer'>
+                              <QuestionMarkCircleIcon onClick={() => setInstructionsOpen(!instructionsOpen)} className='w-5 h-5 text-gray-400' aria-hidden='true' />
+                            </div>
                           </div>
 
-                        <form onSubmit={handleSubmit(submitApiKey)}>
-                            <label htmlFor='api_key' className='block text-sm font-medium text-gray-700'>
-                                New API Key
-                                                </label>
-                            <div className='flex flex-row mt-1'>
-                                <div className='relative flex-grow rounded-md shadow-sm'>
-                                    <input
-                                        {...register('api_key', { required: true, minLength: 4, pattern: API_KEY_PATTERN })}
-                                        className={`${errors.api_key ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:ring-1 focus:border-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'} border block w-full p-3 pr-10 rounded-md sm:text-sm`}
-                                        placeholder='XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
-                                      />
-                                    <div className='absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer'>
-                                        <QuestionMarkCircleIcon onClick={() => setInstructionsOpen(!instructionsOpen)} className='w-5 h-5 text-gray-400' aria-hidden='true' />
-                                      </div>
-                                  </div>
-
-                                {isSubmitting
-                                    ? (
-                                        <button type='button' className='inline-flex ml-4 w-28 btn' disabled=''>
-                                            <svg className='w-5 h-5 mr-3 -ml-1 text-white animate-spin' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
-                                                <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4' />
-                                                <path className='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z' />
-                                              </svg>
-                                            Saving...
-                                                        </button>
-                                      )
-                                    : (
-                                        <button type='submit' disabled={!isDirty} className='ml-4 w-28 btn'>
-                                            {isSubmitSuccessful ? <CheckCircleIcon className='inline-flex w-5 h-5' aria-hidden='true' /> : 'Save'}
-                                          </button>
-                                      )}
-                              </div>
-                            {errors.api_key && (
-                                <p className='mt-2 text-sm text-red-600' id='email-error'>
-                                    Invalid API Key
-                                                    </p>
+                          {isSubmitting
+                            ? (
+                              <button type='button' className='inline-flex ml-4 w-28 btn' disabled=''>
+                                <svg className='w-5 h-5 mr-3 -ml-1 text-white animate-spin' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'>
+                                  <circle className='opacity-25' cx='12' cy='12' r='10' stroke='currentColor' strokeWidth='4' />
+                                  <path className='opacity-75' fill='currentColor' d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z' />
+                                </svg>
+                                Saving...
+                              </button>
+                              )
+                            : (
+                              <button type='submit' disabled={!isDirty} className='ml-4 w-28 btn'>
+                                {isSubmitSuccessful ? <CheckCircleIcon className='inline-flex w-5 h-5' aria-hidden='true' /> : 'Save'}
+                              </button>
                               )}
-                          </form>
-                      </div>
+                        </div>
+                        {errors.api_key && (
+                          <p className='mt-2 text-sm text-red-600' id='email-error'>
+                            Invalid API Key
+                          </p>
+                        )}
+                      </form>
+                    </div>
                   </div>
                   {instructionsOpen && (
                     <div className='mt-8'>
-                        <Instructions />
-                      </div>
+                      <Instructions />
+                    </div>
                   )}
                 </div>
               </div>

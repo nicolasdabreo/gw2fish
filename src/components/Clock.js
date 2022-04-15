@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
-import { tyriaTime, tyriaTimeOfDay, formatTime } from '../helpers/time'
+import { tyriaTime, tyriaTimeOfDay, formatTime } from '../utils'
 
-export default function Clock() {
+export default function Clock () {
   const [time, setTime] = useState(tyriaTime())
   const [timeOfDay, setTimeOfDay] = useState(tyriaTimeOfDay())
 
-  function refreshClock() {
+  function refreshClock () {
     setTime(tyriaTime())
     setTimeOfDay(tyriaTimeOfDay())
   }
 
   useEffect(() => {
     const timerId = setInterval(refreshClock, 5000)
-    return function cleanup() {
+    return function cleanup () {
       clearInterval(timerId)
     }
   }, [])

@@ -1,42 +1,51 @@
-import React, { useEffect } from 'react'
+import React from 'react'
+import useSWR from 'swr'
 import Image from 'next/image'
 import { useLocalStorage } from '@rehooks/local-storage'
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 
-import useApi from '../helpers/useApi'
-import client from '../helpers/gw2client'
-import { FISHING_ACHIEVEMENT_IDS } from '../helpers/constants'
+import client from '../gw2client'
+import { fetcher, slugify } from '../utils'
 
-export default function HomePage () {
+const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505]
+
+export async function getStaticProps () {
+  const fishingAchievements = await client.getFishingAchievements(FISHING_ACHIEVEMENT_IDS)
+
+  return {
+    props: {
+      fishingAchievements: fishingAchievements.data
+    }
+  }
+}
+
+export default function HomePage ({ fishingAchievements }) {
   const [storedApiKey] = useLocalStorage('gw2f.api_key')
-  const fishingAchievements = useApi(client.getFishingAchievements)
-  const accountFishingAchievements = useApi(client.getAccountFishingAchievements)
-
-  useEffect(() => {
-    fishingAchievements.request(FISHING_ACHIEVEMENT_IDS)
-    accountFishingAchievements.request(storedApiKey, FISHING_ACHIEVEMENT_IDS)
-  }, [storedApiKey])
+  const { accountAchievements } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${FISHING_ACHIEVEMENT_IDS.join(',')}` : null, fetcher)
 
   return (
     <Layout>
-      {/* <Seo templateTitle='Home' /> */}
       <Seo />
 
-      {storedApiKey && <section className='flex flex-col m-10 text-center layout'>
-        <div className='flex justify-between mb-1'>
-          <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
-          <span className='text-sm font-medium text-black'>0%</span>
-        </div>
-        <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
-          <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: '0%' }} />
-        </div>
-      </section>}
+      {
+        storedApiKey && (
+          <section className='flex flex-col m-10 text-center layout'>
+            <div className='flex justify-between mb-1'>
+              <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
+              <span className='text-sm font-medium text-black'>0%</span>
+            </div>
+            <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
+              <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: '0%' }} />
+            </div>
+          </section>
+        )
+      }
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
         <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
-          {fishingAchievements.data && <ZoneAchievements achievements={fishingAchievements.data} accountAchievements={accountFishingAchievements.data} />}
+          {fishingAchievements && <ZoneAchievements achievements={fishingAchievements} accountAchievements={accountAchievements} />}
         </ul>
       </section>
     </Layout>
@@ -68,16 +77,3 @@ function ZoneAchievements ({ achievements, accountAchievements }) {
     )
   })
 }
-
-function slugify (string) {
-  const newString = string.replace(' Fisher', '')
-  return toSnakeCase(newString)
-}
-
-const toSnakeCase = str =>
-  str &&
-  str
-    .replace(/[^\w\s]/gi, '')
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map(x => x.toLowerCase())
-    .join('_')

@@ -1,209 +1,181 @@
+export const DATA = {
+  'seitung-province': {
+    name: 'Seitung Province',
+    achievement: 6336,
+    avid_achievement: 6336,
+    fish: [
+      {
+        id: 95894,
+        name: 'Globefish',
+        hole: 'Open Water',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96350,
+        name: 'Bluefin Trevally',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97278,
+        name: 'Cherry Salmon',
+        hole: 'Shore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96425,
+        name: 'Cutlass Fish',
+        hole: 'Shore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97604,
+        name: 'Stingray',
+        hole: 'Shore',
+        bait: 'Any',
+        time: 'Night'
+      },
+      {
+        id: 95603,
+        name: 'Spotted Stingray',
+        hole: 'Shore',
+        bait: 'Shrimplings',
+        time: 'Day'
+      },
+      {
+        id: 97753,
+        name: 'Fugu Fish',
+        hole: 'Shore',
+        bait: 'Shrimplings',
+        time: 'Night'
+      },
+      {
+        id: 97865,
+        name: 'Mullet',
+        hole: 'Open Water',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96719,
+        name: 'Corvina',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 95936,
+        name: 'Crimson Snapper',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97692,
+        name: 'Honeycomb Grouper',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97722,
+        name: 'Humphead Wrasse',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Day'
+      },
+      {
+        id: 96523,
+        name: 'Skipjack Tuna',
+        hole: 'Offshore',
+        bait: 'Sardines',
+        time: 'Any'
+      },
+      {
+        id: 95926,
+        name: 'Sailfish',
+        hole: 'Offshore',
+        bait: 'Sardines',
+        time: 'Any'
+      },
+      {
+        id: 96757,
+        name: 'Porgy',
+        hole: 'Open Water',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96071,
+        name: 'Chestnut Sea Bream',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96944,
+        name: 'Green Sawfish',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97061,
+        name: 'Tripletail',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97714,
+        name: 'Dragonet',
+        hole: 'Offshore',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96318,
+        name: 'Mega Prawn',
+        hole: 'Offshore',
+        bait: 'Sardines',
+        time: 'Night'
+      },
+      {
+        id: 97181,
+        name: 'Sunfish',
+        hole: 'Offshore',
+        bait: 'Shrimplings',
+        time: 'Day'
+      }
+    ]
+  },
+  kaineng: {
+
+  },
+  'echovald-wilds': {
+
+  },
+  'dragons-end': {
+
+  },
+  world: {
+
+  }
+}
+
 // ACHIEVEMENTS
-export const FISHING_ACHIEVEMENT_CATEGORY_ID = 317
-export const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505]
 
 // ITEMS
 export const WORLD_FISH_IDS = [96245, 97015, 97747, 97007, 96016, 95816, 95885, 95767, 96819, 96886, 96153, 97032, 96500, 97250, 97667, 95880, 97252, 97566, 96779, 97707, 96063, 96852, 96635, 95992, 96804, 96108, 96304, 97097, 97388, 96116, 95624, 95682, 96141, 97497, 95870, 95654, 96632, 96082, 97247, 97241, 97595, 95600, 96097, 96256, 96110, 97340, 95793, 95968, 97534]
-export const SEITUNG_FISH_IDS = [95894, 96350, 97278, 96425, 97604, 95603, 97753, 97865, 96719, 95936, 97692, 97722, 96523, 95926, 96757, 96071, 96944, 97061, 97714, 96318, 97181]
 export const KAINENG_FISH_IDS = [96297, 97885, 97074, 95875, 96985, 96105, 95609, 97584, 96176, 96942, 96226, 96672, 95843, 97004, 96532, 97121, 96931, 97887, 97479, 97163, 96081]
 export const DESERT_FISH_IDS = [96445, 96367, 97744, 97848, 96769, 96724, 97466, 96349, 96308, 96676, 97109, 96428, 96094, 97763, 96854, 97755, 95859, 95608, 97187, 97145, 95929]
 export const DESERT_ISLES_FISH_IDS = [97369, 96085, 95794, 97756, 97746, 96513, 96225, 95890, 96397, 97844, 97001, 97443, 95849, 97489]
 export const DRAGONS_END_FISH_IDS = [97240, 97814, 97853, 97183, 96443, 96181, 96817, 96913, 95729, 95670, 96076, 97794, 95699, 95632]
 export const ECHOVALD_WILDS_FISH_IDS = [96807, 96195, 96017, 96834, 95861, 95584, 97716, 96096, 95596, 96310, 96792, 97329, 95765, 97559]
-
-
-// CATCH DATA
-export const SEITUNG_FISH_CATCH_DATA = [
-  {
-    name: 'Globefish',
-    hole: 'Open Water',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Bluefin Trevally',
-    hole: 'Any',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Cherry Salmon',
-    hole: 'Shore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Cutlass Fish',
-    hole: 'Shore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Stingray',
-    hole: 'Shore',
-    bait: 'Any',
-    time: 'Night',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Spotted Stingray',
-    hole: 'Shore',
-    bait: 'Shrimplings',
-    time: 'Day',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Fugu Fish',
-    hole: 'Shore',
-    bait: 'Shrimplings',
-    time: 'Night',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Mullet',
-    hole: 'Open Water',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Corvina',
-    hole: 'Any',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Crimson Snapper',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Honeycomb Grouper',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Humphead Wrasse',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Day',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Skipjack Tuna',
-    hole: 'Offshore',
-    bait: 'Sardines',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Sailfish',
-    hole: 'Offshore',
-    bait: 'Sardines',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Porgy',
-    hole: 'Open Water',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Chestnut Sea Bream',
-    hole: 'Any',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Green Sawfish',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Tripletail',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Dragonet',
-    hole: 'Offshore',
-    bait: 'Any',
-    time: 'Any',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Mega Prawn',
-    hole: 'Offshore',
-    bait: 'Sardines',
-    time: 'Night',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  },
-  {
-    name: 'Sunfish',
-    hole: 'Offshore',
-    bait: 'Shrimplings',
-    time: 'Day',
-    notes: '',
-    location: 'Seitung Province',
-    achieve: 'Seitung Province Fisher'
-  }
-]
 
 export const WORLD_FISH_CATCH_DATA = [
   {
@@ -975,7 +947,7 @@ export const ECHOVALD_WILDS_FISH_CATCH_DATA = [
     notes: '',
     location: 'Echovald Wilds',
     achieve: 'Echovald Wilds Fisher'
-  },
+  }
 ]
 export const DRAGONS_END_FISH_CATCH_DATA = [
   {
@@ -1105,7 +1077,6 @@ export const DRAGONS_END_FISH_CATCH_DATA = [
     achieve: "Dragon's End Fisher"
   }
 ]
-
 
 export const OTHER = [{
   name: 'Bitterling',

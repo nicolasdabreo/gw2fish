@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export function tyriaTime () {
   const tyrianSecs = (Date.now() % (2 * 60 * 60 * 1000)) / 1000
   const tyrianHours = Math.floor(tyrianSecs / 300)
@@ -31,3 +33,24 @@ function isBetween (num, low, high) {
     return false
   }
 }
+
+export const fetcher = url => axios.get(url).then(res => res.data)
+
+export function slugify (string) {
+  const newString = string.replace(' Fisher', '')
+  return toSnakeCase(newString)
+}
+
+export const toSnakeCase = str =>
+  str &&
+  str
+    .replace(/[^\w\s]/gi, '')
+    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+    .map(x => x.toLowerCase())
+    .join('-')
+
+export const zipAndMerge = (a1, a2) => a1.map((a, i) => {
+  return { ...a, ...a2[i] }
+})
+
+export const underscore = str => str && str.replace(/\s/g, '_')

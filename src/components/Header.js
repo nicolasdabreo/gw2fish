@@ -4,7 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import { XIcon, QuestionMarkCircleIcon, CheckCircleIcon } from '@heroicons/react/outline'
 import { useLocalStorage, writeStorage } from '@rehooks/local-storage'
 
-import client from '../helpers/gw2client'
+import client from '../gw2client'
 
 const API_KEY_PATTERN = /^[0-9A-F]{8}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{20}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{4}-[0-9A-F]{12}$/
 

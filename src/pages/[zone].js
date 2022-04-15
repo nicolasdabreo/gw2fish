@@ -9,9 +9,9 @@ import Seo from '../components/Seo'
 import Switch from '../components/Switch'
 import Clock from '../components/Clock'
 
-import client from '../helpers/gw2client'
-import { DATA } from '../helpers/constants'
-import { tyriaTimeOfDay } from '../helpers/time'
+import client from '../gw2client'
+import { DATA } from '../data'
+import { tyriaTimeOfDay, fetcher, underscore, zipAndMerge } from '../utils'
 
 export async function getStaticPaths() {
   const paths = Object.keys(DATA).map((zoneSlug) => ({
@@ -65,6 +65,8 @@ export default function Zone ({ zone, fishingAchievements }) {
       <section className='flex flex-col m-10 text-left layout'>
         <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>Zone Fish</h2>
 
+        {console.log(zone.fish)}
+
         <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {zone.fish.map(fish => (
             <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>
@@ -73,7 +75,7 @@ export default function Zone ({ zone, fishingAchievements }) {
                   <Image src={fish.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium aspect-square item-${fish.rarity.toLowerCase()}`} height='64' width='64' />
                 </div>
                 <div className='flex-1 px-4 py-2 text-sm truncate'>
-                  <a href='#' className='font-medium text-gray-900 hover:text-gray-600'>
+                  <a href={`https://wiki.guildwars2.com/wiki/${underscore(fish.name)}`} className='font-medium text-gray-900 hover:text-gray-600'>
                     {fish.name}
                   </a>
                   <p className='text-gray-500'>{fish.bait}</p>
@@ -88,11 +90,3 @@ export default function Zone ({ zone, fishingAchievements }) {
     </Layout>
   )
 }
-
-const zipAndMerge = (a1, a2) => {
-  return a1.map(function(a, i) {
-    return {...a, ...a2[i]};
-  });
-}
-
-const fetcher = url => axios.get(url).then(res => res.data)

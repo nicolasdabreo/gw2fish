@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { tyriaTime, tyriaTimeOfDay, formatTime } from '../helpers/time'
+import { tyriaTime, tyriaTimeOfDay, formatTime } from '../utils'
 
 export default function Clock () {
   const [time, setTime] = useState(tyriaTime())

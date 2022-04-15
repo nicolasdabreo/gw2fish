@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import useSWR from 'swr'
 import Image from 'next/image'
 import { useLocalStorage } from '@rehooks/local-storage'
@@ -7,7 +6,8 @@ import { useLocalStorage } from '@rehooks/local-storage'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 
-import client from '../helpers/gw2client'
+import client from '../gw2client'
+import { fetcher, slugify } from '../utils'
 
 const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505]
 
@@ -77,18 +77,3 @@ function ZoneAchievements ({ achievements, accountAchievements }) {
     )
   })
 }
-
-const fetcher = url => axios.get(url).then(res => res.data)
-
-function slugify (string) {
-  const newString = string.replace(' Fisher', '')
-  return toSnakeCase(newString)
-}
-
-const toSnakeCase = str =>
-  str &&
-  str
-    .replace(/[^\w\s]/gi, '')
-    .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
-    .map(x => x.toLowerCase())
-    .join('-')

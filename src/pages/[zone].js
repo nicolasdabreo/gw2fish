@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
-import axios from 'axios'
 import Image from 'next/image'
 import { useLocalStorage } from '@rehooks/local-storage'
 

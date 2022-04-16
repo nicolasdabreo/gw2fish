@@ -54,7 +54,13 @@ export const toSnakeCase = str =>
     .join('-')
 
 export const zipAndMerge = (a1, a2) => a1.map((a, i) => {
-  return { ...a, ...a2[i] }
+  const target = a2[i]
+
+  if (!a || !target) {
+    return null
+  } else {
+    return { ...a, ...target }
+  }
 })
 
 export const underscore = str => str && str.replace(/\s/g, '_')

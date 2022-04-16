@@ -45,7 +45,7 @@ export default function Header ({ title }) {
         <header className='mt-4'>
           <nav className='container px-4 mx-auto md:px-6 lg:px-8' aria-label='Top'>
             <div className={`${title ? 'justify-between' : 'justify-end'} flex items-center w-full py-3 border-b border-gray-400`}>
-              {title && <h1 className='text-lg font-bold leading-7 text-gray-900 sm:text-xl sm:truncate'>{title}</h1>}
+              {title && <a href='/' className='text-lg font-bold leading-7 text-gray-900 sm:text-xl sm:truncate'>{title}</a>}
 
               <div className='flex flex-row ml-10 space-x-4' suppressHydrationWarning>
                 {storedAccountName && <h3 className='self-center font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}

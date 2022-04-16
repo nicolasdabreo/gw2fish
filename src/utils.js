@@ -38,7 +38,7 @@ function isBetween (num, low, high) {
   }
 }
 
-export const fetcher = url => axios.get(url).then(res => res.data)
+export const fetcher = async url => await axios.get(url).then(res => res.data)
 
 export function slugify (string) {
   const newString = string.replace(' Fisher', '')

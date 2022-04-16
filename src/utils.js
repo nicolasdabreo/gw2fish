@@ -5,7 +5,11 @@ export function tyriaTime () {
   const tyrianHours = Math.floor(tyrianSecs / 300)
   const tyrianMinutes = Math.round((tyrianSecs / 5) - tyrianHours * 60)
 
-  return [tyrianHours, tyrianMinutes]
+  if (tyrianMinutes === 60) {
+    return [tyrianHours + 1, 0]
+  } else {
+    return [tyrianHours, tyrianMinutes]
+  }
 }
 
 export function tyriaTimeOfDay () {

@@ -24,8 +24,8 @@ export async function getStaticPaths() {
 export async function getStaticProps ({ params: { zone } }) {
   const zoneData = DATA[zone]
   const fishItems = await client.getFish(zoneData.fish.map(f => f.id))
-  zoneData.fish = zipAndMerge(zoneData.fish, fishItems.data)
-  const fishingAchievements = await client.getFishingAchievements([zoneData.achievement])
+  zoneData.fish = zipAndMerge(zoneData.fish, fishItems.data).filter(x => x)
+  const fishingAchievements = await client.getFishingAchievements(zoneData.achievements)
 
   return {
     props: {
@@ -39,7 +39,7 @@ export default function Zone ({ zone, fishingAchievements }) {
   const [showSeparately, setShowSeparately] = useState(false)
   const [showCaught, setShowCaught] = useState(false)
   const [storedApiKey] = useLocalStorage('gw2f.api_key')
-  const { accountAchievements } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${zone.achievement}` : null, fetcher)
+  const { accountAchievements } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${zone.achievements.join(',')}` : null, fetcher)
   const timeOfDay = tyriaTimeOfDay()
 
   return (
@@ -63,10 +63,6 @@ export default function Zone ({ zone, fishingAchievements }) {
       </section>
 
       <section className='flex flex-col m-10 text-left layout'>
-        <h2 className='text-xs font-medium tracking-wide text-gray-500 uppercase'>Zone Fish</h2>
-
-        {console.log(zone.fish)}
-
         <ul role='list' className='grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4'>
           {zone.fish.map(fish => (
             <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>

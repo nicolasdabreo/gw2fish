@@ -16,14 +16,14 @@ export async function getStaticProps () {
 
   return {
     props: {
-      fishingAchievements: fishingAchievements.data
+      achievements: fishingAchievements.data
     }
   }
 }
 
-export default function HomePage ({ fishingAchievements }) {
+export default function HomePage ({ achievements }) {
   const [storedApiKey] = useLocalStorage('gw2f.api_key')
-  const { accountAchievements } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${FISHING_ACHIEVEMENT_IDS.join(',')}` : null, fetcher)
+  const { achievementProgress } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${FISHING_ACHIEVEMENT_IDS.join(',')}` : null, fetcher)
 
   return (
     <Layout>
@@ -45,35 +45,19 @@ export default function HomePage ({ fishingAchievements }) {
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
         <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
-          {fishingAchievements && <ZoneAchievements achievements={fishingAchievements} accountAchievements={accountAchievements} />}
+          {achievements && achievements.filter(a => !a.name.includes('Avid')).map(achievement => (
+            <li key={achievement.id} className='relative'>
+              <a href={slugify(achievement.name)} className='group'>
+                <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
+                  <Image placeholder='blur' blurDataURL='6068-blur.png' src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
+                </div>
+                <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
+                <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>{achievements.progress ? achievements.progress.length : 0} / {achievement.bits.length}</p>
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
     </Layout>
   )
-}
-
-const ZONE_ACHIEVEMENT_NAMES = ['Seitung Province Fisher', 'Kaineng Fisher', 'Echovald Wilds Fisher', "Dragon's End Fisher", 'Krytan Fisher', 'Shiverpeaks Fisher', 'Ascalonian Fisher', 'Maguuma Fisher', 'Desert Fisher', 'Desert Isles Fisher', 'Orrian Fisher', 'Ring of Fire Fisher']
-
-function ZoneAchievements ({ achievements, accountAchievements }) {
-  const filteredAcheivements = achievements.filter(achievement => (
-    ZONE_ACHIEVEMENT_NAMES.some(achievementName => (
-      achievement.name.includes(achievementName)) && !achievement.name.includes('Avid')
-    ))
-  )
-
-  return filteredAcheivements.map(achievement => {
-    const accountAchievement = accountAchievements?.find(item => item.id == achievement.id)
-
-    return (
-      <li key={achievement.id} className='relative'>
-        <a href={slugify(achievement.name)} className='group'>
-          <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
-            <Image placeholder='blur' blurDataURL='6068-blur.png' src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
-          </div>
-          <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
-          <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>{accountAchievement ? accountAchievement.bits.length : 0} / {achievement.bits.length}</p>
-        </a>
-      </li>
-    )
-  })
 }

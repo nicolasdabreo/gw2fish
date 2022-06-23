@@ -2,10 +2,10 @@ import React from 'react'
 
 import Header from './Header'
 
-export default function Layout ({ children, title }) {
+export default function Layout ({ children }) {
   return (
     <>
-      <Header title={title} />
+      <Header title='gw2.fish' />
       <main className='container mx-auto mb-auto'>
         {children}
       </main>

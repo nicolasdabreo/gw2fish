@@ -9,7 +9,7 @@ import Seo from '../components/Seo'
 import client from '../gw2client'
 import { fetcher, slugify } from '../utils'
 
-const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505]
+const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505, 6111]
 
 export async function getStaticProps () {
   const fishingAchievements = await client.getFishingAchievements(FISHING_ACHIEVEMENT_IDS)
@@ -26,7 +26,7 @@ export default function HomePage ({ achievements }) {
   const { data } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${FISHING_ACHIEVEMENT_IDS.join(',')}` : null, fetcher, { fallbackData: null })
 
   return (
-    <Layout title='gw2.fish'>
+    <Layout>
       <Seo />
 
       {storedApiKey && <CSAMMProgressBar achievement={data?.find(a => a.id === 6111)} />}
@@ -62,13 +62,13 @@ function CSAMMProgressBar ({ achievement }) {
     return null
   }
 
-  const progressPercent = '50%'
+  const progressPercent = Math.round((achievement.current / achievement.max) * 100)
 
   return (
     <section className='flex flex-col m-10 text-center layout'>
       <div className='flex justify-between mb-1'>
         <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
-        <span className='text-sm font-medium text-black'>{progressPercent}</span>
+        <span className='text-sm font-medium text-black'>{progressPercent}%</span>
       </div>
       <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
         <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: progressPercent }} />

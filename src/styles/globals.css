@@ -8,6 +8,10 @@
         font-display: swap;
         @apply bg-gray-100;
     }
+
+    body {
+        overflow: scroll; /* Show scrollbars */
+    }
     
     #__next {
         @apply flex flex-col justify-between h-screen;

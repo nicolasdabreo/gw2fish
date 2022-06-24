@@ -1,8 +1,13 @@
+export const TIMEZONES = {
+  tyria: "Tyria",
+  cantha: "Cantha"
+}
+
 export const DATA = {
   'seitung-province': {
     name: 'Seitung Province',
-    achievements: [6336],
-    avid_achievements: [6264],
+    achievement_id: 6336,
+    avid_achievement_id: 6264,
     fish: [
       {
         id: 95894,
@@ -155,8 +160,8 @@ export const DATA = {
   },
   kaineng: {
     name: 'Kaineng',
-    achievements: [6342],
-    avid_achievements: [6192],
+    achievement_id: 6342,
+    avid_achievement_id: 6192,
     fish: [
       {
         id: 97612,
@@ -309,8 +314,8 @@ export const DATA = {
   },
   'echovald-wilds': {
     name: 'Echovald Wilds',
-    achievements: [6258],
-    avid_achievements: [6466],
+    achievement_id: 6258,
+    avid_achievement_id: 6466,
     fish: [
       {
         id: 96807,
@@ -414,8 +419,8 @@ export const DATA = {
   },
   'dragons-end': {
     name: 'Dragons End',
-    achievements: [6506],
-    avid_achievements: [6402],
+    achievement_id: 6506,
+    avid_achievement_id: 6402,
     fish: [
       {
         id: 97240,
@@ -519,8 +524,8 @@ export const DATA = {
   },
   'world-class': {
     name: 'World',
-    achievements: [6224],
-    avid_achievements: [6110],
+    achievement_id: 6224,
+    avid_achievement_id: 6110,
     fish: [
       {
         id: 96852,
@@ -624,8 +629,8 @@ export const DATA = {
   },
   saltwater: {
     name: 'Saltwater',
-    achievements: [6471],
-    avid_achievements: false,
+    achievement_id: 6471,
+    avid_achievement_ids: false,
     fish: [
       {
         id: 95654,
@@ -729,8 +734,8 @@ export const DATA = {
   },
   'aquatic-trash-collector': {
     name: 'Aquatic Trash Collector',
-    achievements: [6439],
-    avid_achievements: false,
+    achievement_id: 6439,
+    avid_achievement_ids: false,
     fish: [
       {
         id: 95767,
@@ -835,8 +840,8 @@ export const DATA = {
   },
   'aquatic-treasure-collector': {
     name: 'Aquatic Treasure Collector',
-    achievements: [6505],
-    avid_achievements: false,
+    achievement_id: 6505,
+    avid_achievement_ids: false,
     fish: [
       {
         id: 96234,
@@ -892,8 +897,8 @@ export const DATA = {
   },
   ascalonian: {
     name: 'Ascalonian',
-    achievements: [6330],
-    avid_achievements: [6484],
+    achievement_id: 6330,
+    avid_achievement_id: 6484,
     fish: [
       {
         id: 96297,
@@ -1046,8 +1051,8 @@ export const DATA = {
   },
   desert: {
     name: 'Desert',
-    achievements: [6317],
-    avid_achievements: [6509],
+    achievement_id: 6317,
+    avid_achievement_id: 6509,
     fish: [
       {
         id: 96445,
@@ -1200,8 +1205,8 @@ export const DATA = {
   },
   'desert-isles': {
     name: 'Desert Isles',
-    achievements: [6106],
-    avid_achievements: [6250],
+    achievement_id: 6106,
+    avid_achievement_id: 6250,
     fish: [
       {
         id: 97369,
@@ -1305,8 +1310,8 @@ export const DATA = {
   },
   krytan: {
     name: 'Krytan',
-    achievements: [6068],
-    avid_achievements: [6263],
+    achievement_id: 6068,
+    avid_achievement_id: 6263,
     fish: [
       {
         id: 95961,
@@ -1459,8 +1464,8 @@ export const DATA = {
   },
   maguuma: {
     name: 'Maguuma',
-    achievements: [6344],
-    avid_achievements: [6475],
+    achievement_id: 6344,
+    avid_achievement_id: 6475,
     fish: [
       {
         id: 96020,
@@ -1613,8 +1618,8 @@ export const DATA = {
   },
   orrian: {
     name: 'Orrian',
-    achievements: [6363],
-    avid_achievements: [6227],
+    achievement_id: 6363,
+    avid_achievement_id: 6227,
     fish: [
       {
         id: 96132,
@@ -1767,8 +1772,8 @@ export const DATA = {
   },
   'ring-of-fire': {
     name: 'Ring of Fire',
-    achievements: [6489],
-    avid_achievements: [6339],
+    achievement_id: 6489,
+    avid_achievement_id: 6339,
     fish: [
       {
         id: 96547,
@@ -1872,8 +1877,8 @@ export const DATA = {
   },
   shiverpeaks: {
     name: 'Shiverpeaks',
-    achievements: [6179],
-    avid_achievements: [6153],
+    achievement_id: 6179,
+    avid_achievement_id: 6153,
     fish: [
       {
         id: 97799,

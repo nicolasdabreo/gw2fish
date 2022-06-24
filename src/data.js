@@ -517,7 +517,7 @@ export const DATA = {
       }
     ]
   },
-  world: {
+  'world-class': {
     name: 'World',
     achievements: [6224],
     avid_achievements: [6110],
@@ -727,60 +727,11 @@ export const DATA = {
       }
     ]
   },
-  'oceanic-collector': {
-    name: 'Oceanic Collector',
-    achievements: [6439, 6505],
+  'aquatic-trash-collector': {
+    name: 'Aquatic Trash Collector',
+    achievements: [6439],
     avid_achievements: [],
     fish: [
-      {
-        id: 96234,
-        name: 'Tarnished Brass Compass',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 97015,
-        name: 'Broken Brass Spyglass',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 97747,
-        name: 'Rusted Bronze Astrolabe',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 97007,
-        name: 'Antique Diving Helm',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 96016,
-        name: 'Golden Merlion Statuette',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 95816,
-        name: 'Antique Porcelain Vase',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
-      {
-        id: 95885,
-        name: 'Tarnished Silver Sextant',
-        hole: 'Any',
-        bait: 'Any',
-        time: 'Any'
-      },
       {
         id: 95767,
         name: 'Pockmarked Vase',
@@ -879,6 +830,64 @@ export const DATA = {
         bait: 'Any',
         time: 'Any'
       }
+
+    ]
+  },
+  'aquatic-treasure-collector': {
+    name: 'Aquatic Treasure Collector',
+    achievements: [6505],
+    avid_achievements: [],
+    fish: [
+      {
+        id: 96234,
+        name: 'Tarnished Brass Compass',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97015,
+        name: 'Broken Brass Spyglass',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97747,
+        name: 'Rusted Bronze Astrolabe',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 97007,
+        name: 'Antique Diving Helm',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 96016,
+        name: 'Golden Merlion Statuette',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 95816,
+        name: 'Antique Porcelain Vase',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+      {
+        id: 95885,
+        name: 'Tarnished Silver Sextant',
+        hole: 'Any',
+        bait: 'Any',
+        time: 'Any'
+      },
+
     ]
   },
   ascalonian: {

@@ -118,7 +118,7 @@ function Fish({fish}) {
               {fish.bait}
             </p>
             <p className='text-gray-500'>
-              <LocationMarkerIcon className='inline-block w-5 h-5 ml-[-4px]' /> 
+              <LocationMarkerIcon className='inline-block w-5 h-5 mr-1 ml-[-4px]' /> 
               {fish.hole}
             </p>
           </div>

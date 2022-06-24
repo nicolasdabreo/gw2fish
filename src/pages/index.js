@@ -27,7 +27,7 @@ export default function HomePage ({ achievements }) {
 
   return (
     <Layout>
-      <Seo />
+      <Seo meta={{title: 'Achievements'}}/>
 
       {storedApiKey && <CSAMMProgressBar achievement={data?.find(a => a.id === 6111)} />}
 

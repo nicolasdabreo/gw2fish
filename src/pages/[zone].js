@@ -50,7 +50,7 @@ export default function Zone ({ zone, achievements }) {
 
   return (
     <Layout>
-      <Seo />
+      <Seo meta={{title: zone.name}} />
 
       <section className='flex flex-col justify-end m-10 sm:flex-row layout'>
         <Clock timezone={TIMEZONES.tyria} />

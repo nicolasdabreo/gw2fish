@@ -3,17 +3,17 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 const DEFAULTS = {
-  title: 'GW2 Fish',
-  siteName: '',
-  description: '',
+  title: 'Dashboard',
+  siteName: 'gw2.Fish',
+  description: 'Achievement and title progress tracker for GW2 fishing',
 
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: '',
+  url: 'https://gw2.fish',
   type: 'website',
   robots: 'follow, index',
 
   /** No need to be filled, will be populated with openGraph function */
-  image: ''
+  image: '/6471.jpg'
 }
 
 const FAVICONS = [
@@ -48,38 +48,39 @@ const FAVICONS = [
   }
 ]
 
-export default function Seo (props) {
+export default function Seo ({ meta = {} }) {
   const router = useRouter()
-  const meta = DEFAULTS
+  const metadata = {...DEFAULTS, ...meta}
+  const title = `${metadata.title} - ${metadata.siteName}`
 
   return (
     <Head>
-      <title>{meta.title}</title>
-      <meta name='robots' content={meta.robots} />
-      <meta content={meta.description} name='description' />
-      <meta property='og:url' content={`${meta.url}${router.asPath}`} />
-      <link rel='canonical' href={`${meta.url}${router.asPath}`} />
+      <title>{title}</title>
+      <meta name='robots' content={metadata.robots} />
+      <meta content={metadata.description} name='description' />
+      <meta property='og:url' content={`${metadata.url}${router.asPath}`} />
+      <link rel='canonical' href={`${metadata.url}${router.asPath}`} />
 
       {/* Open Graph */}
-      <meta property='og:type' content={meta.type} />
-      <meta property='og:site_name' content={meta.siteName} />
-      <meta property='og:description' content={meta.description} />
-      <meta property='og:title' content={meta.title} />
-      <meta name='image' property='og:image' content={meta.image} />
+      <meta property='og:type' content={metadata.type} />
+      <meta property='og:site_name' content={metadata.siteName} />
+      <meta property='og:description' content={metadata.description} />
+      <meta property='og:title' content={title} />
+      <meta name='image' property='og:image' content={metadata.image} />
 
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:site' content='' />
-      <meta name='twitter:title' content={meta.title} />
-      <meta name='twitter:description' content={meta.description} />
-      <meta name='twitter:image' content={meta.image} />
-      {meta.date && (
+      <meta name='twitter:title' content={title} />
+      <meta name='twitter:description' content={metadata.description} />
+      <meta name='twitter:image' content={metadata.image} />
+      {metadata.date && (
         <>
-          <meta property='article:published_time' content={meta.date} />
+          <meta property='article:published_time' content={metadata.date} />
           <meta
             name='publish_date'
             property='og:publish_date'
-            content={meta.date}
+            content={metadata.date}
           />
           <meta
             name='author'

@@ -625,7 +625,7 @@ export const DATA = {
   saltwater: {
     name: 'Saltwater',
     achievements: [6471],
-    avid_achievements: [],
+    avid_achievements: false,
     fish: [
       {
         id: 95654,
@@ -730,7 +730,7 @@ export const DATA = {
   'aquatic-trash-collector': {
     name: 'Aquatic Trash Collector',
     achievements: [6439],
-    avid_achievements: [],
+    avid_achievements: false,
     fish: [
       {
         id: 95767,
@@ -836,7 +836,7 @@ export const DATA = {
   'aquatic-treasure-collector': {
     name: 'Aquatic Treasure Collector',
     achievements: [6505],
-    avid_achievements: [],
+    avid_achievements: false,
     fish: [
       {
         id: 96234,

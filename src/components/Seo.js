@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 const DEFAULTS = {
   title: 'Dashboard',
-  siteName: 'gw2.Fish',
+  siteName: 'gw2.fish',
   description: 'Achievement and title progress tracker for GW2 fishing',
 
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
@@ -13,7 +13,7 @@ const DEFAULTS = {
   robots: 'follow, index',
 
   /** No need to be filled, will be populated with openGraph function */
-  image: '/6471.jpg'
+  image: 'https://gw2.fish/6471.jpg'
 }
 
 const FAVICONS = [

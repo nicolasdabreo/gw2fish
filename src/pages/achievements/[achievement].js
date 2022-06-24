@@ -4,27 +4,25 @@ import { ClockIcon, CogIcon, LocationMarkerIcon } from '@heroicons/react/outline
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
-import Switch from '../components/Switch'
-import Clock from '../components/Clock'
+import Layout from '../../components/Layout'
+import Seo from '../../components/Seo'
+import Switch from '../../components/Switch'
+import Clock from '../../components/Clock'
 
-import client from '../gw2client'
-import { DATA, TIMEZONES } from '../data'
-import { tyriaTimeOfDay, fetcher, underscore, zipAndMerge } from '../utils'
+import client from '../../gw2client'
+import { DATA, TIMEZONES } from '../../data'
+import { tyriaTimeOfDay, fetcher, underscore, zipAndMerge } from '../../utils'
 
 export async function getServerSideProps ({req: req, params: {achievement: achievementName}}) {
   const achievementData = DATA[achievementName]
-  const fishItems = await client.getFish(achievementData?.fish?.map(f => f.id))
-  achievementData.fish = zipAndMerge(achievementData?.fish, fishItems.data).filter(x => x)
+  const fishItems = await client.getFish(achievementData.fish.map(f => f.id))
+  achievementData.fish = zipAndMerge(achievementData.fish, fishItems.data).filter(x => x)
   achievementData.progress = {}
 
   if (req.cookies['gw2f.api_key']) {
-    const request = await client.getAccountFishingAchievements(req.cookies['gw2f.api_key'], [achievementData?.achievement_id])
+    const request = await client.getAccountFishingAchievements(req.cookies['gw2f.api_key'], [achievementData.achievement_id])
     achievementData.progress = request.data[0]
   }
-
-  console.log(achievementData)
 
   return {
     props: {
@@ -65,7 +63,7 @@ export default function Achievement ({ achievement }) {
 
       <section className='flex flex-col m-10 layout'>
         <ul role='list' className='grid grid-cols-1 gap-5 mt-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {fish.map(f => <Fish fish={f} />)}
+          {fish.map(f => <Fish key={f.id} fish={f} />)}
         </ul>
       </section>
     </Layout>

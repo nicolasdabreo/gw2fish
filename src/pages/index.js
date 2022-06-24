@@ -58,21 +58,32 @@ export default function HomePage ({ achievements, data }) {
             .map(achievement => {
               const achievementProgress = data?.find(a => a.id === achievement.id)
 
-              return (
-                <li key={achievement.id} className='relative'>
-                  <a href={slugify(achievement.name)} className='group'>
-                    <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
-                      <Image placeholder='blur' blurDataURL='6068-blur.png' src={`/${achievement.id}.jpg`} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
-                    </div>
-                    <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
-                    <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>{achievementProgress ? achievementProgress.bits.length : 0} / {achievement.bits.length}</p>
-                  </a>
-                </li>
-              )
+              if (achievementProgress?.done) {
+                const avidAchievement = achievements.find(a => a.name == `Avid ${achievement.name}`)
+                const avidAchievementProgress = data?.find(a => a.id === avidAchievement.id)
+                
+                return <Achievement key={avidAchievement.id} achievement={avidAchievement} progress={avidAchievementProgress} image={`/${achievement.id}.jpg`} />
+              } else {
+                return <Achievement key={achievement.id} achievement={achievement} progress={achievementProgress} image={`/${achievement.id}.jpg`} />
+              }
             })}
         </ul>
       </section>
     </Layout>
+  )
+}
+
+function Achievement({achievement, progress, image}) {
+  return (
+    <li key={achievement.id} className='relative'>
+      <a href={`/achievements/${slugify(achievement.name)}`} className='group'>
+        <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
+          <Image placeholder='blur' blurDataURL='6068-blur.png' src={image} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
+        </div>
+        <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
+        <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>{progress ? progress.bits.length : 0} / {achievement.bits.length}</p>
+      </a>
+    </li>
   )
 }
 

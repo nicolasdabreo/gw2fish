@@ -48,9 +48,6 @@ export default function Zone ({ zone, achievements }) {
   const [storedApiKey] = useLocalStorage('gw2f.api_key')
   const { data } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${zone.achievements.join(',')}` : null, fetcher, {fallbackData: null})
 
-
-  const timeOfDay = tyriaTimeOfDay()
-
   return (
     <Layout>
       <Seo />
@@ -81,24 +78,13 @@ export default function Zone ({ zone, achievements }) {
             >
               <Menu.Items className="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div className="px-1 py-2">
-                  <Menu.Item>
-                    <div className="px-3 py-2">
-                      <Switch
-                        label='Show separately'
-                        value={showSeparately}
-                        handleToggle={setShowSeparately}
-                      />
-                    </div>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <div className="px-3 py-2">
-                      <Switch
-                        label='Show caught'
-                        value={showCaught}
-                        handleToggle={setShowCaught}
-                      />
-                    </div>
-                  </Menu.Item>
+                  <div className="px-3 py-2">
+                    <Switch
+                      label='Show caught'
+                      value={showCaught}
+                      handleToggle={setShowCaught}
+                    />
+                  </div>
                 </div>
               </Menu.Items>
             </Transition>
@@ -106,42 +92,50 @@ export default function Zone ({ zone, achievements }) {
         </div>
         
         <ul role='list' className='grid grid-cols-1 gap-5 mt-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3'>
-          {
-            maybeFilterCaught(showCaught, zone.fish, achievements,data)
-              .map(f => (
-                <li key={f.name} className={`${['Any', timeOfDay].includes(f.time) ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>
-                  <div className='flex flex-row justify-between w-full border-t border-b border-r border-gray-200 rounded-md'>
-                    <div className='flex items-center justify-between flex-1 truncate'>
-                      <div className='flex self-center pl-2'>
-                        <Image src={f.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium aspect-square item-${f.rarity.toLowerCase()}`} height='64' width='64' />
-                      </div>
-                      <div className='flex-1 px-4 py-2 text-sm truncate'>
-                        <a href={`https://wiki.guildwars2.com/wiki/${underscore(f.name)}`} className='font-medium text-gray-900 hover:text-gray-600'>
-                          {f.name}
-                        </a>
-                        <p className='text-gray-500'><img src="/bait.png" className='inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />{f.bait}</p>
-                        <p className='text-gray-500'><LocationMarkerIcon className='inline-block w-5 h-5 ml-[-4px]' /> {f.hole}</p>
-                      </div>
-                      <div className='flex-shrink-0 pr-2' />
-                    </div>
-
-
-                    <div className='flex px-4 py-2 text-sm text-left truncate'>
-                      <ClockIcon className='w-5 h-5 mr-2' />
-                      {f.time}
-                    </div>
-                  </div>
-                </li>
-              )
-            )
-          }
+          {maybeFilterCaught(zone.fish, achievements, data, showCaught).map(f => <Fish fish={f} />)}
         </ul>
       </section>
     </Layout>
   )
 }
 
-function maybeFilterCaught(showCaught, fish, achievements, achievementsProgress) {
+function Fish({fish}) {
+  const timeOfDay = tyriaTimeOfDay()
+  
+  return (
+    <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>
+      <div className='flex flex-row justify-between w-full border-t border-b border-r border-gray-200 rounded-md'>
+        <div className='flex items-center justify-between flex-1 truncate'>
+          <div className='flex self-center pl-2'>
+            <Image src={fish.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium aspect-square item-${fish.rarity.toLowerCase()}`} height='64' width='64' />
+          </div>
+          <div className='flex-1 px-4 py-2 text-sm truncate'>
+            <a href={`https://wiki.guildwars2.com/wiki/${underscore(fish.name)}`} className='font-medium text-gray-900 hover:text-gray-600'>
+              {fish.name}
+            </a>
+            <p className='text-gray-500'>
+              <img src="/bait.png" className='inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />
+              {fish.bait}
+            </p>
+            <p className='text-gray-500'>
+              <LocationMarkerIcon className='inline-block w-5 h-5 ml-[-4px]' /> 
+              {fish.hole}
+            </p>
+          </div>
+          <div className='flex-shrink-0 pr-2' />
+        </div>
+
+
+        <div className='flex px-4 py-2 text-sm text-left truncate'>
+          <ClockIcon className='w-5 h-5 mr-2' />
+          {fish.time}
+        </div>
+      </div>
+    </li>
+  )
+}
+
+function maybeFilterCaught(fish, achievements, achievementsProgress, showCaught) {
   if (showCaught || !achievementsProgress) {
     return fish;
   } 

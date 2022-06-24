@@ -15,7 +15,7 @@ export default function Switch ({ label = '', sublabel = '', handleToggle = noop
   }, [enabled])
 
   return (
-    <TailwindSwitch.Group as='div' className='flex items-center'>
+    <TailwindSwitch.Group as="div" className="flex items-center">
       <TailwindSwitch
         checked={enabled}
         onChange={setEnabled}
@@ -32,9 +32,10 @@ export default function Switch ({ label = '', sublabel = '', handleToggle = noop
           )}
         />
       </TailwindSwitch>
-      <TailwindSwitch.Label as='span' className='ml-3'>
-        {label && <span className='text-sm font-medium text-gray-900'>{label}</span>}
-        {sublabel && <span className='text-sm text-gray-500'>{sublabel}</span>}
+      
+      <TailwindSwitch.Label as='label' className='cursor-pointer'>
+        {label && <span className='ml-2 text-sm font-medium text-gray-900'>{label}</span>}
+        {sublabel && <span className='ml-2 text-sm text-gray-500'>{sublabel}</span>}
       </TailwindSwitch.Label>
     </TailwindSwitch.Group>
   )

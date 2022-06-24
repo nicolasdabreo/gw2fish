@@ -34,8 +34,8 @@ export default function Switch ({ label = '', sublabel = '', handleToggle = noop
       </TailwindSwitch>
       
       <TailwindSwitch.Label as='label' className='cursor-pointer'>
-        {label && <span className='ml-2 text-sm font-medium text-gray-900'>{label}</span>}
-        {sublabel && <span className='ml-2 text-sm text-gray-500'>{sublabel}</span>}
+        {label && <span className='ml-4 text-sm font-medium text-gray-900 dark:text-white'>{label}</span>}
+        {sublabel && <span className='ml-4 text-sm text-gray-500 dark:text-gray-300'>{sublabel}</span>}
       </TailwindSwitch.Label>
     </TailwindSwitch.Group>
   )

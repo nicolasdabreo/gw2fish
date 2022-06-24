@@ -16,7 +16,7 @@ export default function Layout ({ children }) {
 
 function Footer () {
   return (
-    <footer className='bg-white'>
+    <footer className='bg-white dark:bg-gray-900'>
       <div className='container py-12 mx-auto md:flex md:items-center md:justify-between'>
         <div className='flex justify-center space-x-6 md:order-2' />
         <div className='mt-8 md:mt-0 md:order-1'>

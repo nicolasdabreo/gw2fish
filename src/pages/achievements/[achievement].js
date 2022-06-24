@@ -74,8 +74,8 @@ function SettingsMenu ({showCaught, setShowCaught, showSeparately, setShowSepara
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button as="div" className="px-2 py-1 rounded-md cursor-pointer hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-200 focus:ring-indigo-500">
-          <CogIcon className="inline-flex justify-center w-5 h-5 text-sm font-medium text-gray-700 " />
+        <Menu.Button as="div" className="px-2 pt-1 pb-2 rounded-md cursor-pointer dark:bg-gray-900 dark:hover:bg-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-200 focus:ring-indigo-500">
+          <CogIcon className="inline-flex justify-center w-5 h-5 text-sm font-medium text-gray-700 dark:text-white" />
         </Menu.Button>
       </div>
 
@@ -88,7 +88,7 @@ function SettingsMenu ({showCaught, setShowCaught, showSeparately, setShowSepara
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg dark:bg-gray-900 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-2">
             <div className="px-3 py-2">
               <Switch
@@ -108,22 +108,22 @@ function Fish({fish}) {
   const timeOfDay = tyriaTimeOfDay()
   
   return (
-    <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white flex col-span-1 rounded-md shadow-sm`}>
-      <div className='flex flex-row justify-between w-full border-t border-b border-r border-gray-200 rounded-md'>
+    <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white dark:bg-gray-900 dark:text-white flex col-span-1 rounded-md shadow-sm`}>
+      <div className='flex flex-row justify-between w-full border-t border-b border-r rounded-md border-slate-900'>
         <div className='flex items-center justify-between flex-1 truncate'>
           <div className='flex self-center pl-2'>
             <Image src={fish.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium aspect-square item-${fish.rarity.toLowerCase()}`} height='64' width='64' />
           </div>
-          <div className='flex-1 px-4 py-2 text-sm truncate'>
-            <a href={`https://wiki.guildwars2.com/wiki/${underscore(fish.name)}`} className='font-medium text-gray-900 hover:text-gray-600'>
+          <div className='flex-1 px-4 py-2 text-sm truncat'>
+            <a href={`https://wiki.guildwars2.com/wiki/${underscore(fish.name)}`} className='font-medium text-gray-900 dark:text-white hover:text-gray-600'>
               {fish.name}
             </a>
-            <p className='text-gray-500'>
-              <img src="/bait.png" className='inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />
+            <p className='text-gray-500 dark:text-gray-300'>
+              <img src="/bait.png" className='text-gray-900 dark:text-white inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />
               {fish.bait}
             </p>
-            <p className='text-gray-500'>
-              <LocationMarkerIcon className='inline-block w-5 h-5 mr-1 ml-[-4px]' /> 
+            <p className='text-gray-500 dark:text-gray-300'>
+              <LocationMarkerIcon className='text-gray-900 dark:text-white inline-block w-5 h-5 mr-1 ml-[-4px]' /> 
               {fish.hole}
             </p>
           </div>

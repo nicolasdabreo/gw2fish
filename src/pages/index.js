@@ -77,11 +77,11 @@ function Achievement({achievement, progress, image}) {
   return (
     <li key={achievement.id} className='relative'>
       <a href={`/achievements/${slugify(achievement.name)}`} className='group'>
-        <div className='relative block overflow-hidden bg-gray-100 pointer-events-none h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
+        <div className='relative block overflow-hidden bg-gray-100 pointer-events-none dark:bg-slate-800 h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
           <Image placeholder='blur' blurDataURL='6068-blur.png' src={image} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
         </div>
-        <p className='block mt-2 text-sm font-medium text-gray-900 truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
-        <p className='block text-sm font-medium text-gray-500 pointer-events-none group-hover:opacity-75'>{progress ? progress.bits.length : 0} / {achievement.bits.length}</p>
+        <p className='block mt-2 text-sm font-medium truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
+        <p className='block text-sm font-medium pointer-events-none text-slate-500 dark:text-slate-400 group-hover:opacity-75'>{progress ? progress.bits.length : 0} / {achievement.bits.length}</p>
       </a>
     </li>
   )
@@ -97,8 +97,8 @@ function CSAMMProgressBar ({ achievement }) {
   return (
     <section className='flex flex-col m-10 text-center layout'>
       <div className='flex justify-between mb-1'>
-        <span className='text-base font-medium text-black'>Cod Swimming Amongst Mere Minnows</span>
-        <span className='text-sm font-medium text-black'>{progressPercent}%</span>
+        <span className='text-base font-medium text-slate-900 dark:text-white'>Cod Swimming Amongst Mere Minnows</span>
+        <span className='text-sm font-medium text-slate-900 dark:text-white'>{progressPercent}%</span>
       </div>
       <div className='w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700'>
         <div className='bg-blue-600 h-2.5 rounded-full' style={{ width: progressPercent }} />

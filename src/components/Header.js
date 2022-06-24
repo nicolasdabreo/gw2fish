@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Popover, Transition } from '@headlessui/react'
 import { XIcon, QuestionMarkCircleIcon, CheckCircleIcon } from '@heroicons/react/outline'
-import { useLocalStorage, writeStorage } from '@rehooks/local-storage'
+import {useCookies} from 'react-cookie'
 
 import client from '../gw2client'
 
@@ -12,9 +12,15 @@ export default function Header ({ title }) {
   const { register, handleSubmit, setError, reset, formState } = useForm()
   const { isSubmitting, isSubmitSuccessful, errors, isDirty } = formState
 
+  const [apiKey, setApiKey] = useState('')
+  const [accountName, setAccountName] = useState('')
   const [instructionsOpen, setInstructionsOpen] = useState(false)
-  const [storedApiKey] = useLocalStorage('gw2f.api_key')
-  const [storedAccountName] = useLocalStorage('gw2f.account_name')
+  const [cookies, setCookie, removeCookie] = useCookies(['gw2f.api_key', 'gw2f.account_name']);
+
+  useEffect(() => {
+    setApiKey(cookies['gw2f.api_key'])
+    setAccountName(cookies['gw2f.account_name'])
+  }, [cookies])
 
   async function submitApiKey (data) {
     return new Promise(async resolve => {
@@ -23,8 +29,8 @@ export default function Header ({ title }) {
       // Check correct permissions
       if (token.data?.id) {
         const account = await client.getAccount(data.api_key)
-        writeStorage('gw2f.api_key', data.api_key)
-        writeStorage('gw2f.account_name', account.data.name)
+        setCookie('gw2f.api_key', data.api_key)
+        setCookie('gw2f.account_name', account.data.name)
         reset({ api_key: '' }, { keepIsSubmitted: true })
       } else {
         setError('API Key was invalid')
@@ -35,8 +41,8 @@ export default function Header ({ title }) {
   }
 
   function deleteApiKey (_e) {
-    writeStorage('gw2f.api_key', '')
-    writeStorage('gw2f.account_name', '')
+    removeCookie('gw2f.api_key')
+    removeCookie('gw2f.account_name')
   }
 
   return (
@@ -48,7 +54,7 @@ export default function Header ({ title }) {
               {title && <a href='/' className='text-lg font-bold leading-7 text-gray-900 sm:text-xl sm:truncate'>{title}</a>}
 
               <div className='flex flex-row ml-10 space-x-4' suppressHydrationWarning>
-                {storedAccountName && <h3 className='self-center font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
+                {accountName && <h3 className='self-center font-semibold text-gray-900 truncate text-medium'>{accountName}</h3>}
                 <Popover.Button className='inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
                   {open ? <XIcon className='w-5 h-5' aria-hidden='true' /> : 'Add API Key'}
                 </Popover.Button>
@@ -71,10 +77,10 @@ export default function Header ({ title }) {
                   <div className='mt-4'>
                     <div className='max-w-3xl mx-auto'>
                       <div className='flex flex-col flex-grow truncate'>
-                        {storedAccountName && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{storedAccountName}</h3>}
-                        {storedApiKey && (
+                        {apiKey && <h3 className='mb-2 font-semibold text-gray-900 truncate text-medium'>{accountName}</h3>}
+                        {apiKey && (
                           <div className='flex flex-row justify-between flex-grow mb-8 truncate'>
-                            <p className='self-center text-sm font-medium text-gray-900 truncate'>{storedApiKey}</p>
+                            <p className='self-center text-sm font-medium text-gray-900 truncate'>{apiKey}</p>
                             <button onClick={() => deleteApiKey()} className='bg-red-500 btn hover:bg-red-600'>
                               <XIcon className='w-5 h-5' aria-hidden='true' />
                             </button>

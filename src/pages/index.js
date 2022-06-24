@@ -1,7 +1,7 @@
-import React from 'react'
-import useSWR from 'swr'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
-import { useLocalStorage } from '@rehooks/local-storage'
+import {useCookies} from 'react-cookie'
+import { useRouter } from 'next/router';
 
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
@@ -11,25 +11,44 @@ import { fetcher, slugify } from '../utils'
 
 const FISHING_ACHIEVEMENT_IDS = [6336, 6342, 6258, 6506, 6179, 6330, 6068, 6344, 6363, 6489, 6317, 6106, 6224, 6471, 6264, 6192, 6466, 6402, 6153, 6484, 6263, 6475, 6227, 6339, 6509, 6250, 6110, 6439, 6505, 6111]
 
-export async function getStaticProps () {
+export async function getServerSideProps ({req: req}) {
   const fishingAchievements = await client.getFishingAchievements(FISHING_ACHIEVEMENT_IDS)
+  let data = null;
+
+  if (req.cookies['gw2f.api_key']) {
+    const request = await client.getAccountFishingAchievements(req.cookies['gw2f.api_key'], FISHING_ACHIEVEMENT_IDS)
+    data = request.data
+  }
 
   return {
     props: {
-      achievements: fishingAchievements.data
+      achievements: fishingAchievements.data,
+      data: data
     }
   }
 }
 
-export default function HomePage ({ achievements }) {
-  const [storedApiKey] = useLocalStorage('gw2f.api_key')
-  const { data } = useSWR(storedApiKey ? `https://api.guildwars2.com/v2/account/achievements?access_token=${storedApiKey}&ids=${FISHING_ACHIEVEMENT_IDS.join(',')}` : null, fetcher, { fallbackData: null })
+export default function HomePage ({ achievements, data }) {
+  const router = useRouter();
+  const [apiKey, setApiKey] = useState('')
+  const [accountName, setAccountName] = useState('')
+  const [cookies, setCookie, removeCookie] = useCookies(['gw2f.api_key']);
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
+
+  useEffect(() => {
+    setApiKey(cookies['gw2f.api_key'])
+    setAccountName(cookies['gw2f.account_name'])
+    refreshData()
+  }, [cookies])
 
   return (
     <Layout>
       <Seo meta={{title: 'Achievements'}}/>
 
-      {storedApiKey && <CSAMMProgressBar achievement={data?.find(a => a.id === 6111)} />}
+      {apiKey && <CSAMMProgressBar achievement={data?.find(a => a.id === 6111)} />}
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
         <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>

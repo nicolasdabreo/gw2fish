@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { ClockIcon, CogIcon, LocationMarkerIcon } from '@heroicons/react/outline'
-import { MoonIcon, SunIcon } from '@heroicons/react/solid'
+import { ClockIcon, CogIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import { MoonIcon, SunIcon, BugAntIcon } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import Image from 'next/image'
 import Layout from '../../components/Layout'
@@ -50,7 +50,7 @@ export default function Achievement ({ achievement }) {
 
       <section className='flex flex-col m-10 text-left layout'>
         <div className='flex flex-row justify-between'>
-          <h1 className='text-xl leading-7 sm:text-2xl sm:truncate'>{achievement.name}</h1>
+          <h1 className='text-3xl leading-7 truncate'>{achievement.name}</h1>
 
           <SettingsMenu
             showCaught={showCaught}
@@ -62,7 +62,7 @@ export default function Achievement ({ achievement }) {
       </section>
 
       <section className='flex flex-col m-10 layout'>
-        <ul role='list' className='grid grid-cols-1 gap-5 mt-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3'>
+        <ul role='list' className='grid grid-cols-1 gap-5 mt-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-3'>
           {fish.map(f => <Fish key={f.id} fish={f} />)}
         </ul>
       </section>
@@ -75,7 +75,7 @@ function SettingsMenu ({showCaught, setShowCaught, showSeparately, setShowSepara
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button as="div" className="px-2 pt-1 pb-2 rounded-md cursor-pointer dark:bg-gray-900 dark:hover:bg-gray-700 hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-200 focus:ring-indigo-500">
-          <CogIcon className="inline-flex justify-center w-5 h-5 text-sm font-medium text-gray-700 dark:text-white" />
+          <CogIcon className="inline-flex justify-center w-5 h-5 font-medium text-gray-700 text-base dark:text-white" />
         </Menu.Button>
       </div>
 
@@ -111,19 +111,19 @@ function Fish({fish}) {
     <li key={fish.name} className={`${['Any', timeOfDay].includes(fish.time) ? '' : 'opacity-50'} bg-white dark:bg-gray-900 dark:text-white flex col-span-1 rounded-md shadow-sm`}>
       <div className='flex flex-row justify-between w-full border-t border-b border-r rounded-md border-slate-900'>
         <div className='flex items-center justify-between flex-1 truncate'>
-          <div className='flex self-center pl-2'>
-            <Image src={fish.icon} className={`flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium aspect-square item-${fish.rarity.toLowerCase()}`} height='64' width='64' />
+          <div className='flex self-center flex-shrink-0 pl-2'>
+            <Image src={fish.icon} className={`flex-shrink-0 w-full h-full flex items-center justify-center text-white text-base font-medium aspect-square item-${fish.rarity.toLowerCase()}`} height='64' width='64' />
           </div>
-          <div className='flex-1 px-4 py-2 text-sm truncat'>
+          <div className='flex-1 px-4 py-2 truncate text-base'>
             <a href={`https://wiki.guildwars2.com/wiki/${underscore(fish.name)}`} className='font-medium text-gray-900 dark:text-white hover:text-gray-600'>
               {fish.name}
             </a>
-            <p className='text-gray-500 dark:text-gray-300'>
-              <img src="/bait.png" className='text-gray-900 dark:text-white inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />
+            <p className='text-gray-500 truncate dark:text-gray-300'>
+              <BugAntIcon className='text-gray-900 dark:text-white inline-block w-4 h-4 ml-[-2px] mr-2 opacity-60' />
               {fish.bait}
             </p>
-            <p className='text-gray-500 dark:text-gray-300'>
-              <LocationMarkerIcon className='text-gray-900 dark:text-white inline-block w-5 h-5 mr-1 ml-[-4px]' /> 
+            <p className='text-gray-500 truncate dark:text-gray-300'>
+              <MapPinIcon className='text-gray-900 dark:text-white inline-block w-5 h-5 mr-1 ml-[-4px]' /> 
               {fish.hole}
             </p>
           </div>
@@ -131,7 +131,7 @@ function Fish({fish}) {
         </div>
 
 
-        <div className='flex px-4 py-2 text-sm text-left truncate'>
+        <div className='flex px-4 py-2 text-left truncate text-base'>
           <ClockIcon className='w-5 h-5 mr-2' />
           {fish.time}
         </div>
@@ -141,11 +141,13 @@ function Fish({fish}) {
 }
 
 function maybeFilterCaught(achievement, showCaught) {
-  if (showCaught || !achievement.progress) {
+  if (showCaught || Object.keys(achievement.progress).length === 0) {
     return achievement.fish;
   } 
 
   let uncaughtFishIds = [];
+
+  console.log(!!achievement.progress)
 
   const ids = achievement.fish.filter((_fish, fishIndex) => !achievement.progress.bits.includes(fishIndex)).map(bit => bit.id)
   uncaughtFishIds = [...uncaughtFishIds, ...ids]

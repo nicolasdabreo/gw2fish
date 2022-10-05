@@ -20,9 +20,9 @@ export default function Clock ({ timezone }) {
 
   return (
     <div className='flex flex-col text-right'>
-      <h2 className='text-md'>{timezone}</h2>
+      <h2 className='text-lg'>{timezone}</h2>
       <time className='text-6xl'>{formatTime(time)}</time>
-      <time className='text-xl'>{timeOfDay}</time>
+      <time className='text-2xl'>{timeOfDay}</time>
     </div>
   )
 }

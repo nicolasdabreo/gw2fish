@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Popover, Transition } from '@headlessui/react'
-import { XIcon, QuestionMarkCircleIcon, CheckCircleIcon } from '@heroicons/react/outline'
+import { XMarkIcon, QuestionMarkCircleIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 import {useCookies} from 'react-cookie'
 
 import client from '../gw2client'
@@ -51,12 +51,15 @@ export default function Header ({ title }) {
         <header className='mt-4'>
           <nav className='container px-4 mx-auto md:px-6 lg:px-8' aria-label='Top'>
             <div className={`${title ? 'justify-between' : 'justify-end'} flex items-center w-full py-3 border-b border-gray-400`}>
-              {title && <a href='/' className='text-lg font-bold leading-7 sm:text-xl sm:truncate'>{title}</a>}
+              {title && <a href='/' className='flex flex-row items-center h-12 text-xl font-bold leading-7 sm:truncate'>
+                <img src="/logo.png" className="w-12 h-12 mr-4 rounded-full" />
+                <span className="sr-only">{title}</span>
+              </a>}
 
               <div className='flex flex-row ml-10 space-x-4' suppressHydrationWarning>
-                {accountName && <h3 className='self-center font-semibold truncate text-medium'>{accountName}</h3>}
-                <Popover.Button className='inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
-                  {open ? <XIcon className='w-5 h-5' aria-hidden='true' /> : 'Add API Key'}
+                {accountName && <h3 className='self-center text-lg font-semibold truncate'>{accountName}</h3>}
+                <Popover.Button className='inline-flex items-center px-4 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+                  {open ? <XMarkIcon className='w-5 h-5' aria-hidden='true' /> : 'Add API Key'}
                 </Popover.Button>
               </div>
             </div>
@@ -77,26 +80,26 @@ export default function Header ({ title }) {
                   <div className='mt-4'>
                     <div className='max-w-3xl mx-auto'>
                       <div className='flex flex-col flex-grow truncate'>
-                        {apiKey && <h3 className='mb-2 font-semibold truncate text-medium'>{accountName}</h3>}
+                        {apiKey && <h3 className='mb-2 text-lg font-semibold truncate'>{accountName}</h3>}
                         {apiKey && (
                           <div className='flex flex-row justify-between flex-grow mb-8 truncate'>
-                            <p className='self-center text-sm font-medium truncate'>{apiKey}</p>
-                            <button onClick={() => deleteApiKey()} className='bg-red-500 btn hover:bg-red-600'>
-                              <XIcon className='w-5 h-5' aria-hidden='true' />
+                            <p className='self-center text-base font-medium truncate'>{apiKey}</p>
+                            <button onClick={() => deleteApiKey()} className='bg-red-500 btn hover:bg-red-600 ring-2 ring-inset'>
+                              <XMarkIcon className='w-5 h-5' aria-hidden='true' />
                             </button>
                           </div>
                         )}
                       </div>
 
                       <form onSubmit={handleSubmit(submitApiKey)}>
-                        <label htmlFor='api_key' className='block text-sm font-medium text-gray-700 dark:text-white'>
+                        <label htmlFor='api_key' className='block text-lg font-medium text-gray-700 dark:text-white'>
                           New API Key
                         </label>
                         <div className='flex flex-row mt-1'>
                           <div className='relative flex-grow rounded-md shadow-sm'>
                             <input
                               {...register('api_key', { required: true, minLength: 4, pattern: API_KEY_PATTERN })}
-                              className={`${errors.api_key ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:ring-1 focus:border-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'} border block w-full p-3 pr-10 rounded-md sm:text-sm dark:bg-slate-800 dark:text-gray-300 dark:border-gray-600`}
+                              className={`${errors.api_key ? 'border-red-300 text-red-900 placeholder-red-300 focus:outline-none focus:ring-red-500 focus:ring-1 focus:border-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'} border block w-full p-3 pr-10 rounded-md text-base dark:bg-slate-800 dark:text-gray-300 dark:border-gray-600`}
                               placeholder='XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
                             />
                             <div className='absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer'>
@@ -121,7 +124,7 @@ export default function Header ({ title }) {
                               )}
                         </div>
                         {errors.api_key && (
-                          <p className='mt-2 text-sm text-red-600' id='email-error'>
+                          <p className='mt-2 text-base text-red-600' id='email-error'>
                             Invalid API Key
                           </p>
                         )}
@@ -146,17 +149,17 @@ export default function Header ({ title }) {
 function Instructions () {
   return (
     <div className='max-w-3xl mx-auto'>
-      <h2 className='block text-sm font-medium text-gray-700 dark:text-white'>
+      <h2 className='block text-lg font-medium text-gray-700 dark:text-white'>
         Instructions
       </h2>
 
       <ol className='px-8 py-4 list-decimal'>
-        <li className='text-sm font-medium'>Go to the <a className='underline' href='https://account.arena.net/applications' target='_blank' rel='noreferrer'>official Guild Wars 2 API Key Management</a></li>
-        <li className='text-sm font-medium'>Click on the "New Key" button</li>
-        <li className='text-sm font-medium'>Enter a name of your choice and check all permission checkboxes.</li>
-        <li className='text-sm font-medium'>Copy your new API key.</li>
-        <li className='text-sm font-medium'>Paste it in the form above.</li>
-        <li className='text-sm font-medium'>Click the "Save" button.</li>
+        <li className='text-base font-medium'>Go to the <a className='underline' href='https://account.arena.net/applications' target='_blank' rel='noreferrer'>official Guild Wars 2 API Key Management</a></li>
+        <li className='text-base font-medium'>Click on the "New Key" button</li>
+        <li className='text-base font-medium'>Enter a name of your choice and check all permission checkboxes.</li>
+        <li className='text-base font-medium'>Copy your new API key.</li>
+        <li className='text-base font-medium'>Paste it in the form above.</li>
+        <li className='text-base font-medium'>Click the "Save" button.</li>
       </ol>
     </div>
   )

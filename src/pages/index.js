@@ -51,7 +51,7 @@ export default function HomePage ({ achievements, data }) {
       {apiKey && <CSAMMProgressBar achievement={data?.find(a => a.id === 6111)} />}
 
       <section className='flex flex-col m-10 text-center mt-14 layout'>
-        <ul role='list' className='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8'>
+        <ul role='list' className='grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8'>
           {achievements
             .filter(a => !a.name.includes('Avid'))
             .sort(sorter)
@@ -77,10 +77,10 @@ function Achievement({achievement, progress, image}) {
   return (
     <li key={achievement.id} className='relative'>
       <a href={`/achievements/${slugify(achievement.name)}`} className='group'>
-        <div className='relative block overflow-hidden bg-gray-100 pointer-events-none dark:bg-slate-800 h-28 aspect-w-10 aspect-h-7 md:h-28 lg:h-32 xl:h-40 group-hover:opacity-75'>
-          <Image placeholder='blur' blurDataURL='6068-blur.png' src={image} alt={`${achievement.name} Concept Art`} className='rounded-lg' layout='fill' />
+        <div className='relative block h-48 max-w-sm mx-auto overflow-hidden bg-gray-100 pointer-events-none dark:bg-slate-800 aspect-w-10 aspect-h-7 group-hover:opacity-75'>
+          <Image placeholder='blur' blurDataURL='6068-blur.png' src={image} alt={`${achievement.name} Concept Art`} className='object-cover rounded-lg' layout='fill' />
         </div>
-        <p className='block mt-2 text-sm font-medium truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
+        <p className='block mt-2 text-base font-medium truncate pointer-events-none group-hover:opacity-75'>{achievement.name}</p>
         <p className='block text-sm font-medium pointer-events-none text-slate-500 dark:text-slate-400 group-hover:opacity-75'>{progress ? progress.bits.length : 0} / {achievement.bits.length}</p>
       </a>
     </li>
